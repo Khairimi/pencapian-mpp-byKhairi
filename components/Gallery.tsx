@@ -46,7 +46,7 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
   };
 
   return (
-    <section id="galeri" className="bg-uitm-mist px-4 py-16 sm:px-6 sm:py-24">
+    <section id="galeri" className="bg-uitm-royal px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <SectionHeading
@@ -57,15 +57,15 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
         </Reveal>
 
         {images.length === 0 ? (
-          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
+          <div className="mt-8 grid grid-cols-2 sm:mt-10 gap-3 sm:grid-cols-3 sm:gap-4">
             {Array.from({ length: 6 }).map((_, i) => (
               <div
                 key={i}
-                className={`grid place-items-center rounded-3xl border-2 border-dashed border-uitm-purple/15 bg-white ${
+                className={`grid place-items-center rounded-3xl border-2 border-dashed border-[#FDB913]/25 bg-white/[0.03] ${
                   i === 0 ? "col-span-2 row-span-2 aspect-square sm:col-span-1 sm:row-span-1" : "aspect-square"
                 } ${i === 0 ? "sm:aspect-square" : ""}`}
               >
-                <div className="flex flex-col items-center gap-2 p-4 text-center text-uitm-purple/40">
+                <div className="flex flex-col items-center gap-2 p-4 text-center text-uitm-gold/50">
                   <ImageIcon className="h-8 w-8" aria-hidden="true" />
                   {i === 0 && <p className="text-sm font-medium">Gambar akan dipaparkan di sini tidak lama lagi.</p>}
                 </div>
@@ -73,13 +73,13 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
             ))}
           </div>
         ) : (
-          <ul className="mt-10 columns-2 gap-3 sm:gap-4 md:columns-3 lg:columns-4">
+          <ul className="mt-8 columns-2 sm:mt-10 gap-3 sm:gap-4 md:columns-3 lg:columns-4">
             {images.map((img, i) => (
               <li key={img.src} className="mb-3 break-inside-avoid sm:mb-4">
                 <button
                   type="button"
                   onClick={() => setIndex(i)}
-                  className="group relative block w-full overflow-hidden rounded-2xl bg-uitm-purple/10 shadow-sm focus:outline-none focus-visible:ring-4 focus-visible:ring-uitm-gold"
+                  className="group relative block w-full overflow-hidden rounded-2xl border border-[#FDB913]/25 bg-white/[0.03] shadow-sm transition-all duration-300 hover:border-[#FDB913]/60 focus:outline-none focus-visible:ring-4 focus-visible:ring-uitm-gold"
                   aria-label={`Besarkan gambar: ${img.alt}`}
                 >
                   <img

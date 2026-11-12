@@ -25,7 +25,7 @@ function Corner({ className }: { className: string }) {
 export default function Hero() {
   const fmt = (n: number) => n.toLocaleString("en-US");
   return (
-    <section id="utama" className="relative overflow-hidden bg-gradient-to-b from-[#1E0B36] via-[#2A0E4A] to-uitm-purple text-white">
+    <section id="utama" className="relative overflow-hidden bg-gradient-to-b from-[#1E0B36] via-[#2A0E4A] to-[#260F42] text-white">
       <div className="motif pointer-events-none absolute inset-0 opacity-60" />
       <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-uitm-gold/15 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-fuchsia-500/15 blur-3xl" />
@@ -63,7 +63,7 @@ export default function Hero() {
                   <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-white/90 sm:text-xs">
                     Pemakluman Rasmi
                   </p>
-                  <h1 className="mt-1 break-words font-display text-[2rem] font-bold leading-[1.05] text-[#FDB913] sm:text-5xl lg:text-6xl">
+                  <h1 className="mt-1 break-words font-display text-[1.75rem] font-bold min-[400px]:text-[2rem] leading-[1.05] text-[#FDB913] sm:text-5xl lg:text-6xl">
                     Pembubaran MPP
                   </h1>
                   <p className="mt-2 text-sm text-white sm:text-lg">Penghargaan Kepimpinan Sesi 2025/2026</p>

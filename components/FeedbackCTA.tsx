@@ -7,9 +7,9 @@ export default function FeedbackCTA() {
   const hasQr = FEEDBACK_QR_IMAGE.trim() !== "";
 
   return (
-    <section id="maklum-balas" className="px-4 py-16 sm:px-6 sm:py-24">
+    <section id="maklum-balas" className="overflow-x-hidden bg-uitm-royal3 px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
       <Reveal className="mx-auto max-w-5xl">
-        <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-uitm-purple to-uitm-night px-6 py-12 text-white shadow-soft sm:px-12 sm:py-16">
+        <div className="relative overflow-hidden card-royal rounded-[2rem] bg-uitm-plum/60 px-5 py-10 text-white shadow-soft sm:px-12 sm:py-14">
           <div className="motif pointer-events-none absolute inset-0 opacity-50" />
 
           <div
@@ -25,7 +25,7 @@ export default function FeedbackCTA() {
                 ))}
               </div>
               <h2
-                className={`mt-5 font-display text-[1.75rem] font-semibold leading-tight sm:text-4xl ${
+                className={`mt-5 font-display text-[1.75rem] font-semibold leading-tight text-uitm-gold sm:text-4xl ${
                   hasQr ? "" : "mx-auto max-w-2xl"
                 }`}
               >
@@ -63,7 +63,7 @@ export default function FeedbackCTA() {
                   aria-label="Buka borang Feedback MPP 25/26"
                   className="block rounded-2xl bg-gradient-to-br from-uitm-gold via-uitm-antique to-uitm-gold p-1.5 shadow-gold transition hover:-translate-y-1"
                 >
-                  <span className="block rounded-xl border-4 border-uitm-purple bg-white p-3">
+                  <span className="block rounded-xl border-4 border-uitm-royal bg-white p-3">
                     <img
                       src={FEEDBACK_QR_IMAGE}
                       alt="Kod QR Feedback MPP 25/26"

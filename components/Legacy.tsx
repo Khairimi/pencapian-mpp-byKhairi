@@ -6,7 +6,7 @@ import { SectionHeading } from "./Statement";
 
 export default function Legacy() {
   return (
-    <section id="legasi" className="relative overflow-hidden bg-uitm-deep px-4 py-16 text-white sm:px-6 sm:py-24">
+    <section id="legasi" className="relative overflow-hidden bg-uitm-royal3 px-4 py-12 text-white sm:px-6 sm:py-16 lg:py-20">
       <div className="motif pointer-events-none absolute inset-0 opacity-40" />
       <div className="relative mx-auto max-w-6xl">
         <Reveal>
@@ -18,12 +18,12 @@ export default function Legacy() {
           />
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid grid-cols-1 sm:mt-12 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {LEGACY.map((l, i) => (
             <Reveal key={l.no} delay={i * 90}>
-              <div className="group flex h-full flex-col rounded-3xl border border-uitm-gold/25 bg-white/[0.06] p-6 backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-uitm-gold hover:bg-white/10">
+              <div className="card-royal group flex h-full flex-col rounded-3xl p-6 hover:-translate-y-0.5">
                 <div className="flex items-center justify-between">
-                  <span className="grid h-12 w-12 place-items-center rounded-2xl bg-uitm-gold text-uitm-deep">
+                  <span className="grid h-12 w-12 place-items-center rounded-2xl bg-uitm-gold text-uitm-royal">
                     <Icon name={l.icon} className="h-6 w-6" />
                   </span>
                   <span className="font-display text-3xl font-bold text-white/15">{l.no}</span>

@@ -18,8 +18,8 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-40 transition-all duration-300 ${
-        scrolled || open ? "bg-uitm-deep/90 shadow-lg backdrop-blur-md" : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 border-b border-[#FDB913]/20 backdrop-blur-md transition-all duration-300 ${
+        scrolled || open ? "bg-[#1E0B36]/95 shadow-lg" : "bg-[#1E0B36]/90"
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
@@ -31,12 +31,12 @@ export default function Navbar() {
           </span>
         </a>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-0.5 lg:flex xl:gap-1">
           {NAV.map((n) => (
             <li key={n.href}>
               <a
                 href={n.href}
-                className="rounded-full px-4 py-2 text-sm font-medium text-white/80 transition hover:bg-white/10 hover:text-white"
+                className="whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-white/80 xl:px-4 transition hover:bg-[#FDB913]/10 hover:text-[#FDB913]"
               >
                 {n.label}
               </a>
@@ -47,7 +47,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="grid h-11 w-11 place-items-center rounded-xl text-white hover:bg-white/10 md:hidden"
+          className="grid h-11 w-11 place-items-center rounded-xl border border-[#FDB913]/40 text-[#FDB913] transition hover:bg-[#FDB913]/10 lg:hidden"
           aria-label={open ? "Tutup menu" : "Buka menu"}
           aria-expanded={open}
         >
@@ -56,13 +56,13 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <ul className="space-y-1 border-t border-white/10 px-4 pb-5 pt-3 md:hidden">
+        <ul className="max-h-[calc(100vh-4rem)] space-y-1 overflow-y-auto border-t border-[#FDB913]/20 px-4 pb-5 pt-3 lg:hidden">
           {NAV.map((n) => (
             <li key={n.href}>
               <a
                 href={n.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-xl px-4 py-3 text-base font-medium text-white/90 active:bg-white/10"
+                className="block min-h-[44px] rounded-xl px-4 py-3 text-base font-medium text-white/90 active:bg-[#FDB913]/10"
               >
                 {n.label}
               </a>

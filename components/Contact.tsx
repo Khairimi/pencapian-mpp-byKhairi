@@ -4,9 +4,9 @@ import Reveal from "./Reveal";
 
 export default function Contact() {
   return (
-    <section id="hubungi" className="px-4 pb-16 sm:px-6 sm:pb-24">
+    <section id="hubungi" className="overflow-x-hidden bg-uitm-royal2 px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
       <Reveal className="mx-auto max-w-5xl">
-        <div className="rounded-[2rem] border border-[#FDB913]/30 bg-[#1B1438] px-6 py-10 text-center text-white shadow-soft sm:px-12 sm:py-12">
+        <div className="card-royal rounded-[2rem] bg-uitm-plum/60 px-5 py-10 text-center text-white shadow-soft sm:px-12 sm:py-12">
           <span className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-uitm-gold/15 text-uitm-gold">
             <Phone className="h-6 w-6" aria-hidden="true" />
           </span>

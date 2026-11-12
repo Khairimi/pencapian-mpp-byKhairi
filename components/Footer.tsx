@@ -4,7 +4,7 @@ import Logo from "./Logo";
 
 export default function Footer() {
   return (
-    <footer className="bg-uitm-night px-4 pb-10 pt-14 text-white sm:px-6">
+    <footer className="border-t border-[#FDB913]/25 bg-uitm-royal3 px-4 pb-8 pt-12 text-white sm:px-6">
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <ul className="mt-12 flex flex-wrap gap-2">
+        <ul className="mt-10 flex flex-wrap gap-2">
           {HASHTAGS.map((h) => (
             <li
               key={h}

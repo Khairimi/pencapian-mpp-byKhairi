@@ -3,18 +3,19 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
   --font-sans: "Plus Jakarta Sans Variable";
   --font-display: "Fraunces Variable";
 }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
-  @apply bg-uitm-mist text-uitm-ink antialiased;
+  @apply bg-uitm-royal text-white antialiased;
   overflow-x: hidden;
 }
 
@@ -41,7 +42,7 @@ section[id] {
 }
 
 .glass {
-  @apply border border-white/15 bg-white/10 backdrop-blur-md;
+  @apply border border-[#FDB913]/25 bg-white/[0.03] backdrop-blur-sm transition-all duration-300 hover:border-[#FDB913]/60;
 }
 
 /* Animasi scroll */
@@ -66,4 +67,9 @@ section[id] {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: none; }
+}
+
+/* Kad rasmi seragam: lutsinar + sempadan emas halus */
+.card-royal {
+  @apply border border-[#FDB913]/25 bg-white/[0.03] backdrop-blur-sm transition-all duration-300 hover:border-[#FDB913]/60;
 }

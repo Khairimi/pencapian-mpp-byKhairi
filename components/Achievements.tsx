@@ -13,7 +13,7 @@ export default function Achievements() {
   const lastIndex = tab.items.length - 1;
 
   return (
-    <section id="pencapaian" className="bg-white px-4 py-16 sm:px-6 sm:py-24">
+    <section id="pencapaian" className="bg-uitm-royal px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <SectionHeading
@@ -37,13 +37,13 @@ export default function Achievements() {
                 onClick={() => setActive(t.id)}
                 className={`flex min-h-[56px] items-center gap-3 rounded-2xl border px-3 py-3 text-left text-sm font-semibold transition sm:px-4 ${
                   isActive
-                    ? "border-uitm-purple bg-uitm-purple text-white shadow-soft"
-                    : "border-uitm-purple/10 bg-uitm-mist text-uitm-deep hover:border-uitm-purple/30"
+                    ? "border-[#FDB913] bg-[#FDB913]/10 text-white shadow-soft"
+                    : "card-royal text-white/85"
                 }`}
               >
                 <span
                   className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${
-                    isActive ? "bg-uitm-gold text-uitm-deep" : "bg-white text-uitm-purple"
+                    isActive ? "bg-uitm-gold text-uitm-royal" : "bg-white/10 text-uitm-gold"
                   }`}
                 >
                   <Icon name={t.icon} className="h-5 w-5" />
@@ -65,8 +65,8 @@ export default function Achievements() {
           className="mt-8 animate-[fadeIn_0.4s_ease]"
         >
           <div className="mb-6 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
-            <h3 className="font-display text-2xl font-semibold text-uitm-deep">{tab.label}</h3>
-            <p className="text-sm text-uitm-ink/60">{tab.tagline}</p>
+            <h3 className="font-display text-2xl font-semibold text-uitm-gold">{tab.label}</h3>
+            <p className="text-sm text-white/60">{tab.tagline}</p>
           </div>
 
           <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-6">
@@ -77,27 +77,27 @@ export default function Achievements() {
               return (
                 <li
                   key={item.title}
-                  className={`group relative overflow-hidden rounded-3xl p-5 transition hover:-translate-y-1 sm:p-6 ${span} ${
+                  className={`group relative overflow-hidden rounded-3xl p-5 transition-all duration-300 hover:-translate-y-0.5 sm:p-6 ${span} ${
                     item.highlight
-                      ? "bg-gradient-to-br from-uitm-deep to-uitm-purple text-white shadow-soft"
-                      : "border border-uitm-purple/10 bg-uitm-mist text-uitm-ink hover:shadow-soft"
+                      ? "border border-[#FDB913]/25 bg-gradient-to-br from-uitm-gold to-uitm-antique text-uitm-royal shadow-gold"
+                      : "card-royal text-white"
                   }`}
                 >
                   {item.highlight && (
-                    <span className="absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-uitm-gold px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-uitm-deep">
+                    <span className="absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-uitm-royal px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-uitm-gold">
                       <Star className="h-3 w-3 fill-current" aria-hidden="true" /> Impak Utama
                     </span>
                   )}
                   <span
                     className={`grid h-12 w-12 place-items-center rounded-2xl ${
-                      item.highlight ? "bg-white/10 text-uitm-gold" : "bg-white text-uitm-purple shadow-sm"
+                      item.highlight ? "bg-uitm-royal/10 text-uitm-royal" : "bg-[#FDB913]/10 text-uitm-gold"
                     }`}
                   >
                     <Icon name={item.icon} className="h-6 w-6" />
                   </span>
                   <h4 className={`mt-4 text-lg font-bold leading-snug ${item.highlight ? "pr-0" : ""}`}>{item.title}</h4>
                   {item.desc && (
-                    <p className={`mt-1.5 text-[15px] leading-relaxed ${item.highlight ? "text-white/75" : "text-uitm-ink/70"}`}>
+                    <p className={`mt-1.5 text-[15px] leading-relaxed ${item.highlight ? "text-uitm-royal/80" : "text-white/70"}`}>
                       {item.desc}
                     </p>
                   )}
@@ -106,7 +106,7 @@ export default function Achievements() {
             })}
           </ul>
 
-          {tab.footnote && <p className="mt-5 text-center text-sm italic text-uitm-ink/55">{tab.footnote}</p>}
+          {tab.footnote && <p className="mt-5 text-center text-sm italic text-white/55">{tab.footnote}</p>}
         </div>
       </div>
     </section>

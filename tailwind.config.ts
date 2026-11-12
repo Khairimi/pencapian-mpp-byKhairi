@@ -13,6 +13,10 @@ const config: Config = {
           antique: "#D4AF37",
           ink: "#1E1B2E",
           mist: "#F8F9FA",
+          royal: "#1E0B36",
+          royal2: "#260F42",
+          royal3: "#160729",
+          plum: "#2A0E4A",
         },
       },
       fontFamily: {
