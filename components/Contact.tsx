@@ -21,10 +21,10 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`WhatsApp ${c.name} di ${c.phone}`}
-                className="inline-flex min-h-[52px] items-center justify-center gap-2.5 rounded-full bg-white px-5 py-3 text-[15px] font-semibold text-slate-900 sm:px-6 sm:text-base shadow-md transition hover:scale-[1.02]"
+                className="inline-flex min-h-[52px] items-center justify-center gap-2.5 rounded-full bg-white px-5 py-3 text-[15px] font-semibold text-slate-900 sm:px-6 sm:text-base shadow-md transition hover:-translate-y-0.5 hover:shadow-lg"
               >
                 <MessageCircle className="h-5 w-5 shrink-0 text-[#25D366]" aria-hidden="true" />
-                <span className="whitespace-nowrap">
+                <span className="min-w-0 break-words text-center">
                   {c.name} — {c.phone}
                 </span>
               </a>

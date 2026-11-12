@@ -50,18 +50,25 @@ export default function Hero() {
         {/* Bento statistik */}
         <div className="mt-10 grid grid-cols-2 gap-3 sm:mt-14 sm:gap-4 lg:grid-cols-4 lg:grid-rows-2">
           <Reveal delay={250} className="col-span-2 lg:row-span-2">
-            <div className="relative flex h-full flex-col justify-between overflow-hidden rounded-3xl bg-gradient-to-br from-uitm-gold to-uitm-antique p-6 text-uitm-deep shadow-gold sm:p-8">
+            <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-3xl border border-[#FDB913]/25 bg-gradient-to-br from-uitm-gold to-uitm-antique p-6 text-uitm-deep shadow-gold transition hover:-translate-y-0.5 sm:p-8">
               <Trophy className="absolute -right-6 -top-6 h-40 w-40 opacity-15" aria-hidden="true" />
-              <span className="inline-flex w-fit items-center gap-2 rounded-full bg-uitm-deep px-3 py-1 text-xs font-bold uppercase tracking-wider text-uitm-gold">
+              <span className="relative inline-flex w-fit items-center gap-2 rounded-full bg-uitm-deep px-3 py-1 text-xs font-bold uppercase tracking-wider text-uitm-gold">
                 <Trophy className="h-3.5 w-3.5" aria-hidden="true" /> Manifesto
               </span>
-              <div className="mt-8">
+              <div className="relative">
                 <p className="font-display text-7xl font-bold leading-none sm:text-8xl">100%</p>
                 <p className="mt-3 text-lg font-bold sm:text-xl">Pencapaian Manifesto</p>
                 <p className="mt-1 text-sm font-medium text-uitm-deep/80 sm:text-base">
                   Disempurnakan sepenuhnya demi warga kampus.
                 </p>
               </div>
+              <ul className="relative flex flex-wrap gap-2 border-t border-uitm-deep/15 pt-4 text-xs font-semibold">
+                {["5 Naik Taraf Infrastruktur", "15+ Program Berimpak", "Suara & Kebajikan Mahasiswa"].map((t) => (
+                  <li key={t} className="rounded-full bg-uitm-deep/10 px-3 py-1.5 ring-1 ring-uitm-deep/10">
+                    {t}
+                  </li>
+                ))}
+              </ul>
             </div>
           </Reveal>
 
@@ -94,21 +101,21 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={390}>
-            <div className="glass flex h-full flex-col justify-between rounded-3xl p-5 sm:p-6">
+            <div className="glass flex h-full flex-col justify-center gap-3 rounded-3xl p-5 transition hover:-translate-y-0.5 sm:p-6">
               <Building2 className="h-7 w-7 text-uitm-gold" aria-hidden="true" />
-              <div className="mt-6">
-                <p className="font-display text-4xl font-bold sm:text-5xl">5</p>
-                <p className="mt-1 text-sm leading-snug text-white/80">Naik Taraf Infrastruktur Utama</p>
+              <div>
+                <p className="font-display text-4xl font-bold leading-none sm:text-5xl">5</p>
+                <p className="mt-1.5 text-sm leading-snug text-white/80">Naik Taraf Infrastruktur Utama</p>
               </div>
             </div>
           </Reveal>
 
           <Reveal delay={460}>
-            <div className="glass flex h-full flex-col justify-between rounded-3xl p-5 sm:p-6">
+            <div className="glass flex h-full flex-col justify-center gap-3 rounded-3xl p-5 transition hover:-translate-y-0.5 sm:p-6">
               <PartyPopper className="h-7 w-7 text-uitm-gold" aria-hidden="true" />
-              <div className="mt-6">
-                <p className="font-display text-4xl font-bold sm:text-5xl">15+</p>
-                <p className="mt-1 text-sm leading-snug text-white/80">Program Berimpak Tinggi</p>
+              <div>
+                <p className="font-display text-4xl font-bold leading-none sm:text-5xl">15+</p>
+                <p className="mt-1.5 text-sm leading-snug text-white/80">Program Berimpak Tinggi</p>
               </div>
             </div>
           </Reveal>

@@ -21,7 +21,7 @@ export default function Legacy() {
         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {LEGACY.map((l, i) => (
             <Reveal key={l.no} delay={i * 90}>
-              <div className="group flex h-full flex-col rounded-3xl border border-uitm-gold/25 bg-white/[0.06] p-6 backdrop-blur-sm transition hover:border-uitm-gold hover:bg-white/10">
+              <div className="group flex h-full flex-col rounded-3xl border border-uitm-gold/25 bg-white/[0.06] p-6 backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-uitm-gold hover:bg-white/10">
                 <div className="flex items-center justify-between">
                   <span className="grid h-12 w-12 place-items-center rounded-2xl bg-uitm-gold text-uitm-deep">
                     <Icon name={l.icon} className="h-6 w-6" />
