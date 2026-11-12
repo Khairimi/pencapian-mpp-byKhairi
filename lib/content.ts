@@ -3,7 +3,10 @@
 // ============================================================
 
 /** Pautan Google Form maklum balas. Gantikan "#" dengan pautan sebenar. */
-export const GOOGLE_FORM_URL: string = "#";
+export const GOOGLE_FORM_URL: string = "https://forms.gle/kVjwFAqAR9juxqNG6";
+
+/** Gambar kod QR "Feedback MPP 25/26" (dalam public/). Kosongkan ("") untuk sembunyikan. */
+export const FEEDBACK_QR_IMAGE: string = "/images/qr-feedback.png";
 
 export const SITE = {
   shortName: "MPP UiTMCTKKT 25/26",
