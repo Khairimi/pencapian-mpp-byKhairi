@@ -17,7 +17,7 @@ export const SITE = {
   subtitle: ["Majlis Perwakilan Pelajar", "UiTM Cawangan Terengganu", "Kampus Kuala Terengganu"],
   session: "Sesi 2025/2026",
   motto: "Meneraju Aspirasi, Membina Kecemerlangan",
-  badge: "Pemakluman Rasmi & Penghargaan Pembubaran",
+  badge: "Pemakluman Rasmi dan Penghargaan Pembubaran",
   date: "Jumaat, 13 November 2026",
   hijri: "3 Jamadilakhir 1448H",
 };

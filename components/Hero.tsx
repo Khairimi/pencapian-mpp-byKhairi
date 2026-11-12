@@ -12,26 +12,23 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-24 sm:px-6 sm:pb-24 sm:pt-28">
         <Reveal>
-          <div className="flex w-full max-w-xl items-center gap-3 rounded-2xl border border-uitm-gold/40 bg-uitm-gold/10 p-2.5 pr-4">
-            <span className="shrink-0 rounded-lg bg-[#FDB913]/15 p-2 text-uitm-gold">
-              <CalendarDays className="h-5 w-5 shrink-0" aria-hidden="true" />
+          <div className="flex w-full max-w-3xl items-start gap-4 rounded-3xl border border-[#FDB913]/40 bg-[#FDB913]/10 p-4 shadow-gold sm:items-center sm:gap-5 sm:p-6">
+            <span className="shrink-0 rounded-2xl bg-[#FDB913]/15 p-3 text-[#FDB913] sm:p-4">
+              <CalendarDays className="h-8 w-8 shrink-0 sm:h-12 sm:w-12" aria-hidden="true" />
             </span>
-            <p className="min-w-0 whitespace-normal break-words text-[11px] font-semibold uppercase leading-snug tracking-wide sm:text-xs">
-              <span className="block text-uitm-gold">{SITE.badge}</span>
-              <span className="block text-white/85">
+            <div className="min-w-0">
+              <h1 className="font-display text-[1.6rem] font-semibold leading-tight text-[#FDB913] sm:text-4xl lg:text-5xl">
+                {SITE.badge}
+              </h1>
+              <p className="mt-2 break-words text-xs font-semibold uppercase leading-snug tracking-wide text-white/85 sm:mt-3 sm:text-sm">
                 {SITE.date} ({SITE.hijri})
-              </span>
-            </p>
+              </p>
+            </div>
           </div>
         </Reveal>
 
-
         <Reveal delay={100}>
-          <h1 className="mt-6 font-display text-[2.1rem] font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
-            Majlis Perwakilan Pelajar{" "}
-            <span className="text-gold-gradient">(MPP)</span>
-          </h1>
-          <div className="mt-4 max-w-3xl space-y-1 text-base leading-relaxed text-white/80 sm:text-lg">
+          <div className="mt-6 max-w-3xl space-y-1 text-base leading-relaxed text-white/80 sm:text-lg">
             {SITE.subtitle.map((line) => (
               <p key={line}>{line}</p>
             ))}
