@@ -31,10 +31,12 @@ export default function Hero() {
             Majlis Perwakilan Pelajar{" "}
             <span className="text-gold-gradient">(MPP)</span>
           </h1>
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/80 sm:text-lg">
-            {SITE.campus} <span className="font-semibold text-white">({SITE.campusShort})</span> —{" "}
-            <span className="font-semibold text-uitm-gold">{SITE.session}</span>
-          </p>
+          <div className="mt-4 max-w-3xl space-y-1 text-base leading-relaxed text-white/80 sm:text-lg">
+            {SITE.subtitle.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
+            <p className="font-semibold text-[#FDB913]">{SITE.session}</p>
+          </div>
         </Reveal>
 
         <Reveal delay={200}>
@@ -123,7 +125,7 @@ export default function Hero() {
 
         <div className="mt-12 flex justify-center">
           <a
-            href="#kenyataan"
+            href="#pemakluman"
             className="inline-flex min-h-[48px] items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white/85 transition hover:border-uitm-gold hover:text-uitm-gold"
           >
             Baca Kenyataan Rasmi <ArrowDown className="h-4 w-4 animate-bounce" aria-hidden="true" />

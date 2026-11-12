@@ -13,6 +13,8 @@ export const SITE = {
   title: "Majlis Perwakilan Pelajar (MPP)",
   campus: "UiTM Cawangan Terengganu Kampus Kuala Terengganu",
   campusShort: "UiTMCTKKT",
+  /** Sub-tajuk Hero (3 baris pertama; baris ke-4 ialah sesi, berwarna emas) */
+  subtitle: ["Majlis Perwakilan Pelajar", "UiTM Cawangan Terengganu", "Kampus Kuala Terengganu"],
   session: "Sesi 2025/2026",
   motto: "Meneraju Aspirasi, Membina Kecemerlangan",
   badge: "Pemakluman Rasmi & Penghargaan Pembubaran",
@@ -21,9 +23,10 @@ export const SITE = {
 };
 
 export const NAV = [
-  { href: "#kenyataan", label: "Kenyataan" },
+  { href: "#kenyataan", label: "Ucapan" },
   { href: "#pencapaian", label: "Pencapaian" },
   { href: "#legasi", label: "Legasi" },
+  { href: "#pemakluman", label: "Pemakluman" },
   { href: "#galeri", label: "Galeri" },
   { href: "#maklum-balas", label: "Maklum Balas" },
   { href: "#hubungi", label: "Hubungi" },

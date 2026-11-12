@@ -4,10 +4,10 @@ import Reveal from "./Reveal";
 
 export default function Statement() {
   return (
-    <section id="kenyataan" className="px-4 py-16 sm:px-6 sm:py-24">
+    <section id="kenyataan" className="px-4 pb-8 pt-16 sm:px-6 sm:pb-12 sm:pt-24">
       <div className="mx-auto max-w-4xl">
         <Reveal>
-          <SectionHeading eyebrow="Kenyataan Rasmi" title="Ucapan Penghargaan & Pemakluman Pembubaran" />
+          <SectionHeading eyebrow="Kenyataan Rasmi" title="Ucapan Penghargaan" />
         </Reveal>
 
         <Reveal delay={60}>
@@ -42,9 +42,17 @@ export default function Statement() {
             </div>
           </div>
         </Reveal>
+      </div>
+    </section>
+  );
+}
 
-        <Reveal delay={100}>
-          <article className="relative mt-6 overflow-hidden rounded-3xl border border-uitm-purple/10 bg-white shadow-soft">
+export function OfficialStatement() {
+  return (
+    <section id="pemakluman" className="px-4 py-16 sm:px-6 sm:py-24">
+      <div className="mx-auto max-w-4xl">
+        <Reveal>
+          <article className="relative overflow-hidden rounded-3xl border border-uitm-purple/10 bg-white shadow-soft">
             <div className="h-2 bg-gradient-to-r from-uitm-purple via-uitm-gold to-uitm-purple" />
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-uitm-purple/10 bg-uitm-purple/[0.03] px-5 py-4 sm:px-10">
               <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-uitm-purple">
