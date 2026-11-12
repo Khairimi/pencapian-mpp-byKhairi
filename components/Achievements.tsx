@@ -23,7 +23,7 @@ export default function Achievements() {
           />
         </Reveal>
 
-        <div role="tablist" aria-label="Kategori pencapaian" className="mt-8 grid grid-cols-2 gap-2 sm:mt-10 sm:gap-3 lg:grid-cols-4">
+        <div role="tablist" aria-label="Kategori pencapaian" className="mt-8 grid grid-cols-1 gap-2 min-[340px]:grid-cols-2 sm:mt-10 sm:gap-3 lg:grid-cols-4">
           {ACHIEVEMENTS.map((t) => {
             const isActive = t.id === active;
             return (
