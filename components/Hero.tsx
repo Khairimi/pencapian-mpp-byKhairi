@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-uitm-gold/20 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-fuchsia-500/20 blur-3xl" />
 
-      <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-28 sm:px-6 sm:pb-24 sm:pt-36">
+      <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-24 sm:px-6 sm:pb-24 sm:pt-28">
         <Reveal>
           <div className="flex w-full max-w-xl items-center gap-3 rounded-2xl border border-uitm-gold/40 bg-uitm-gold/10 p-2.5 pr-4">
             <span className="shrink-0 rounded-lg bg-[#FDB913]/15 p-2 text-uitm-gold">

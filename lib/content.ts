@@ -54,9 +54,9 @@ export const CAMPUS_STORY = {
   badge: "Kampus FSKM • Amanah 2 Wakil MPP",
   title: "Dua suara, satu kampus",
   paragraphs: [
-    "UiTM Cawangan Terengganu Kampus Kuala Terengganu (UiTMCTKKT) merupakan kampus Fakulti Sains Komputer dan Matematik (FSKM).",
-    "Berbeza dengan kampus besar yang mempunyai barisan jawatankuasa yang ramai, kampus ini hanya mempunyai 2 orang wakil Majlis Perwakilan Pelajar (MPP), iaitu Khairi dan Raden. Kami berdua menggalas keseluruhan suara mahasiswa, urusan kebajikan, aduan fasiliti dan perhubungan bersama pihak pengurusan.",
+    "UiTM Cawangan Terengganu Kampus Kuala Terengganu (UiTMCTKKT) merupakan kampus Fakulti Sains Komputer dan Matematik (FSKM). Berbeza dengan kampus besar yang mempunyai barisan jawatankuasa yang ramai, kampus ini hanya mempunyai 2 orang wakil Majlis Perwakilan Pelajar (MPP), iaitu Khairi dan Raden. Kami berdua menggalas keseluruhan suara mahasiswa, urusan kebajikan, aduan fasiliti dan perhubungan bersama pihak pengurusan.",
     "Menggalas tanggungjawab untuk seluruh warga kampus dengan hanya kekuatan dua orang bukanlah satu tugas yang mudah. Namun, berkat sokongan padu mahasiswa dan kerjasama semua pihak, setiap amanah dan manifesto tetap diusahakan hingga selesai demi legasi terbaik buat UiTMCTKKT.",
+    "Tidak dilupakan tulang belakang kami Sekretariat Majlis Perwakilan Pelajar seramai 5 orang iaitu Danish, Rae, Neesa, Ain dan Iqa yang sentiasa membantu kami menyelesaikan tugasan yang diberikan dengan baik. Kami sentiasa percaya bahawa pemimpin yang hebat adalah pemimpin yang mampu melahirkan pemimpin lain.",
   ],
   reps: ["Khairi", "Raden"],
 };
