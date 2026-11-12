@@ -2,10 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Token susun atur — satu sumber untuk navbar, padding section dan gutter.
+ * Semua section guna .section + satu container (.container-*), jadi tiada
+ * padding sisi berganda dan tiada media query berulang dalam komponen.
+ */
 :root {
   color-scheme: dark;
   --font-sans: "Plus Jakarta Sans Variable";
   --font-display: "Fraunces Variable";
+  --nav-h: 4rem;
+  --gutter: 1rem;
+  --section-py: 3.5rem;
+}
+@media (min-width: 400px) {
+  :root { --gutter: 1.25rem; }
+}
+@media (min-width: 640px) {
+  :root { --gutter: 1.5rem; --section-py: 4rem; }
+}
+@media (min-width: 1024px) {
+  :root { --gutter: 2rem; --section-py: 5rem; }
 }
 
 html {
@@ -17,8 +34,46 @@ body {
   @apply bg-uitm-royal text-white antialiased;
 }
 
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+@layer components {
+  /* Latar penuh lebar; hanya padding menegak */
+  .section {
+    padding-block: var(--section-py);
+  }
+
+  /* Container berpusat mengikut jenis kandungan */
+  .container-wide,
+  .container-mid,
+  .container-narrow {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+  .container-wide { max-width: calc(80rem + 2 * var(--gutter)); }   /* grid kad, galeri, hero */
+  .container-mid { max-width: calc(64rem + 2 * var(--gutter)); }    /* ucapan, maklum balas, hubungi */
+  .container-narrow { max-width: calc(56rem + 2 * var(--gutter)); } /* surat pemakluman (bacaan panjang) */
+
+  /* Kad rasmi seragam: lutsinar + sempadan emas halus */
+  .glass,
+  .card-royal {
+    @apply border border-[#FDB913]/25 bg-white/[0.03] backdrop-blur-sm transition-all duration-300 hover:border-[#FDB913]/60;
+  }
+}
+
+/*
+ * Anchor: tajuk section mendarat ~1.25rem di bawah navbar tetap,
+ * tanpa mengira padding section pada setiap breakpoint.
+ */
 section[id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: calc(var(--nav-h) - var(--section-py) + 1.25rem);
+}
+#utama {
+  scroll-margin-top: 0;
 }
 
 /* Motif kerawang/songket halus untuk latar ungu */
@@ -37,10 +92,6 @@ section[id] {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
-
-.glass {
-  @apply border border-[#FDB913]/25 bg-white/[0.03] backdrop-blur-sm transition-all duration-300 hover:border-[#FDB913]/60;
 }
 
 /* Animasi scroll */
@@ -65,9 +116,4 @@ section[id] {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: none; }
-}
-
-/* Kad rasmi seragam: lutsinar + sempadan emas halus */
-.card-royal {
-  @apply border border-[#FDB913]/25 bg-white/[0.03] backdrop-blur-sm transition-all duration-300 hover:border-[#FDB913]/60;
 }

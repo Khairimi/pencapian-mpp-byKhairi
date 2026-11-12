@@ -16,16 +16,30 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Tutup menu telefon dengan Escape atau apabila skrin dibesarkan ke paparan desktop
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const onMq = () => mq.matches && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    mq.addEventListener("change", onMq);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      mq.removeEventListener("change", onMq);
+    };
+  }, [open]);
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b border-[#FDB913]/20 backdrop-blur-md transition-all duration-300 ${
         scrolled || open ? "bg-[#1E0B36]/95 shadow-lg" : "bg-[#1E0B36]/90"
       }`}
     >
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <a href="#utama" className="flex min-h-[44px] items-center gap-2.5 text-white" onClick={() => setOpen(false)}>
+      <nav className="container-wide flex h-16 items-center justify-between gap-3">
+        <a href="#utama" className="flex min-h-[44px] min-w-0 items-center gap-2.5 text-white" onClick={() => setOpen(false)}>
           <Logo className="rounded-lg bg-white p-1 shadow-sm" imgClassName="h-8 sm:h-9" />
-          <span className="text-sm font-semibold leading-tight">
+          <span className="truncate text-sm font-semibold leading-tight">
             {SITE.campusShort}
             <span className="block text-[11px] font-medium text-white/60">{SITE.session}</span>
           </span>
@@ -47,7 +61,8 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="grid h-11 w-11 place-items-center rounded-xl border border-[#FDB913]/40 text-[#FDB913] transition hover:bg-[#FDB913]/10 lg:hidden"
+          aria-controls="menu-telefon"
+          className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-[#FDB913]/40 text-[#FDB913] transition hover:bg-[#FDB913]/10 lg:hidden"
           aria-label={open ? "Tutup menu" : "Buka menu"}
           aria-expanded={open}
         >
@@ -56,7 +71,10 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <ul className="max-h-[calc(100vh-4rem)] space-y-1 overflow-y-auto border-t border-[#FDB913]/20 px-4 pb-5 pt-3 lg:hidden">
+        <ul
+          id="menu-telefon"
+          className="container-wide max-h-[calc(100dvh-var(--nav-h))] space-y-1 overflow-y-auto overscroll-contain border-t border-[#FDB913]/20 pb-5 pt-3 lg:hidden"
+        >
           {NAV.map((n) => (
             <li key={n.href}>
               <a

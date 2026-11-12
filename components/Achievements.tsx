@@ -13,8 +13,8 @@ export default function Achievements() {
   const lastIndex = tab.items.length - 1;
 
   return (
-    <section id="pencapaian" className="bg-uitm-royal px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl">
+    <section id="pencapaian" className="section bg-uitm-royal">
+      <div className="container-wide">
         <Reveal>
           <SectionHeading
             eyebrow="Rekod Pencapaian"
@@ -23,7 +23,7 @@ export default function Achievements() {
           />
         </Reveal>
 
-        <div role="tablist" aria-label="Kategori pencapaian" className="mt-10 grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
+        <div role="tablist" aria-label="Kategori pencapaian" className="mt-8 grid grid-cols-2 gap-2 sm:mt-10 sm:gap-3 lg:grid-cols-4">
           {ACHIEVEMENTS.map((t) => {
             const isActive = t.id === active;
             return (
@@ -35,7 +35,7 @@ export default function Achievements() {
                 aria-selected={isActive}
                 aria-controls={`panel-${t.id}`}
                 onClick={() => setActive(t.id)}
-                className={`flex min-h-[56px] items-center gap-3 rounded-2xl border px-3 py-3 text-left text-sm font-semibold transition sm:px-4 ${
+                className={`flex min-h-[56px] min-w-0 items-center gap-2.5 rounded-2xl border px-3 py-3 text-left text-sm font-semibold transition sm:gap-3 sm:px-4 ${
                   isActive
                     ? "border-[#FDB913] bg-[#FDB913]/10 text-white shadow-soft"
                     : "card-royal text-white/85"
@@ -48,7 +48,7 @@ export default function Achievements() {
                 >
                   <Icon name={t.icon} className="h-5 w-5" />
                 </span>
-                <span className="leading-tight">
+                <span className="min-w-0 leading-tight">
                   <span className="lg:hidden">{t.shortLabel}</span>
                   <span className="hidden lg:inline">{t.label}</span>
                 </span>
@@ -64,8 +64,8 @@ export default function Achievements() {
           aria-labelledby={`tab-${tab.id}`}
           className="mt-8 animate-[fadeIn_0.4s_ease]"
         >
-          <div className="mb-6 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
-            <h3 className="font-display text-2xl font-semibold text-uitm-gold">{tab.label}</h3>
+          <div className="mb-6 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
+            <h3 className="font-display text-xl font-semibold leading-tight text-uitm-gold sm:text-2xl">{tab.label}</h3>
             <p className="text-sm text-white/60">{tab.tagline}</p>
           </div>
 
@@ -77,7 +77,7 @@ export default function Achievements() {
               return (
                 <li
                   key={item.title}
-                  className={`group relative overflow-hidden rounded-3xl p-5 transition-all duration-300 hover:-translate-y-0.5 sm:p-6 ${span} ${
+                  className={`group relative min-w-0 overflow-hidden rounded-3xl p-5 transition-all duration-300 hover:-translate-y-0.5 sm:p-6 ${span} ${
                     item.highlight
                       ? "border border-[#FDB913]/25 bg-gradient-to-br from-uitm-gold to-uitm-antique text-uitm-royal shadow-gold"
                       : "card-royal text-white"
@@ -95,7 +95,7 @@ export default function Achievements() {
                   >
                     <Icon name={item.icon} className="h-6 w-6" />
                   </span>
-                  <h4 className={`mt-4 text-lg font-bold leading-snug ${item.highlight ? "pr-0" : ""}`}>{item.title}</h4>
+                  <h4 className="mt-4 text-lg font-bold leading-snug">{item.title}</h4>
                   {item.desc && (
                     <p className={`mt-1.5 text-[15px] leading-relaxed ${item.highlight ? "text-uitm-royal/80" : "text-white/70"}`}>
                       {item.desc}

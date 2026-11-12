@@ -4,10 +4,10 @@ import Logo from "./Logo";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#FDB913]/25 bg-uitm-royal3 px-4 pb-8 pt-12 text-white sm:px-6">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
-          <div>
+    <footer className="border-t border-[#FDB913]/25 bg-uitm-royal3 pb-8 pt-12 text-white">
+      <div className="container-wide">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
+          <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex flex-col items-start gap-4">
               <Logo className="rounded-xl bg-white p-2 shadow-md" imgClassName="h-16" />
               <div className="space-y-0.5">

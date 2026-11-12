@@ -46,8 +46,8 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
   };
 
   return (
-    <section id="galeri" className="bg-uitm-royal px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-7xl">
+    <section id="galeri" className="section bg-uitm-royal">
+      <div className="container-wide">
         <Reveal>
           <SectionHeading
             eyebrow="Galeri Lensa Kepimpinan"
@@ -73,9 +73,9 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
             ))}
           </div>
         ) : (
-          <ul className="mt-8 columns-1 gap-4 min-[480px]:columns-2 sm:mt-10 lg:columns-3">
+          <ul className="mt-8 columns-1 gap-3 min-[360px]:columns-2 sm:mt-10 sm:gap-4 lg:columns-3">
             {images.map((img, i) => (
-              <li key={img.src} className="mb-4 break-inside-avoid">
+              <li key={img.src} className="mb-3 break-inside-avoid sm:mb-4">
                 <button
                   type="button"
                   onClick={() => setIndex(i)}
@@ -86,12 +86,14 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
                     <img
                       src={img.src}
                       alt={img.alt}
+                      width={img.width}
+                      height={img.height}
                       loading="lazy"
                       decoding="async"
                       className="h-auto w-full transition duration-500 group-hover:scale-105"
                     />
                   </span>
-                  <span className="block border-t border-[#FDB913]/20 px-3.5 py-3 text-[13px] font-medium leading-snug text-white/85 sm:text-sm">
+                  <span className="block border-t border-[#FDB913]/20 px-3 py-2.5 text-xs font-medium leading-snug text-white/85 sm:px-3.5 sm:py-3 sm:text-sm">
                     {img.alt}
                   </span>
                 </button>
@@ -124,14 +126,14 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
           </div>
 
           <div
-            className="relative flex flex-1 items-center justify-center px-2 pb-6 sm:px-16"
+            className="relative flex min-h-0 flex-1 items-center justify-center px-2 pb-6 sm:px-16"
             onTouchStart={(e) => setTouchX(e.touches[0].clientX)}
             onTouchEnd={(e) => onTouchEnd(e.changedTouches[0].clientX)}
           >
             <img
               src={images[index].src}
               alt={images[index].alt}
-              className="max-h-[78vh] max-w-full rounded-xl object-contain shadow-2xl"
+              className="max-h-[78dvh] max-w-full rounded-xl object-contain shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             />
             {images.length > 1 && (

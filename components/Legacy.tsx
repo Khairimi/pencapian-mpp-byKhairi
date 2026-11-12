@@ -6,9 +6,9 @@ import { SectionHeading } from "./Statement";
 
 export default function Legacy() {
   return (
-    <section id="legasi" className="relative overflow-hidden bg-uitm-royal3 px-4 py-12 text-white sm:px-6 sm:py-16 lg:py-20">
+    <section id="legasi" className="section relative overflow-hidden bg-uitm-royal3 text-white">
       <div className="motif pointer-events-none absolute inset-0 opacity-40" />
-      <div className="relative mx-auto max-w-7xl">
+      <div className="container-wide relative">
         <Reveal>
           <SectionHeading
             light
@@ -18,10 +18,10 @@ export default function Legacy() {
           />
         </Reveal>
 
-        <div className="mt-8 grid grid-cols-1 sm:mt-12 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid grid-cols-1 gap-3 sm:mt-10 sm:grid-cols-2 sm:gap-4 xl:grid-cols-4">
           {LEGACY.map((l, i) => (
             <Reveal key={l.no} delay={i * 90}>
-              <div className="card-royal group flex h-full flex-col rounded-3xl p-6 hover:-translate-y-0.5">
+              <div className="card-royal group flex h-full min-w-0 flex-col rounded-3xl p-5 hover:-translate-y-0.5 sm:p-6">
                 <div className="flex items-center justify-between">
                   <span className="grid h-12 w-12 place-items-center rounded-2xl bg-uitm-gold text-uitm-royal">
                     <Icon name={l.icon} className="h-6 w-6" />
