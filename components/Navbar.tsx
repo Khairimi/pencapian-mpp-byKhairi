@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import { NAV, SITE } from "@/lib/content";
 import Logo from "./Logo";
 
-export default function Navbar({ logoSrc }: { logoSrc: string | null }) {
+export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -24,7 +24,7 @@ export default function Navbar({ logoSrc }: { logoSrc: string | null }) {
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <a href="#utama" className="flex items-center gap-2.5 text-white" onClick={() => setOpen(false)}>
-          <Logo src={logoSrc} size={40} />
+          <Logo className="rounded-lg bg-white p-1 shadow-sm" imgClassName="h-8 sm:h-9" />
           <span className="text-sm font-semibold leading-tight">
             {SITE.campusShort}
             <span className="block text-[11px] font-medium text-white/60">{SITE.session}</span>

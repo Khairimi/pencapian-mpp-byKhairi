@@ -1,9 +1,8 @@
 import { ArrowDown, Building2, CalendarDays, Cpu, Trophy, Vote, PartyPopper } from "lucide-react";
-import { CAMPUS_STORY, MANDATE, SITE, STATEMENT } from "@/lib/content";
-import Logo from "./Logo";
+import { CAMPUS_STORY, MANDATE, SITE } from "@/lib/content";
 import Reveal from "./Reveal";
 
-export default function Hero({ logoSrc }: { logoSrc: string | null }) {
+export default function Hero() {
   const fmt = (n: number) => n.toLocaleString("en-US");
   return (
     <section id="utama" className="relative overflow-hidden bg-gradient-to-b from-uitm-night via-uitm-deep to-uitm-purple text-white">
@@ -26,25 +25,9 @@ export default function Hero({ logoSrc }: { logoSrc: string | null }) {
           </div>
         </Reveal>
 
-        <Reveal delay={60}>
-          <div className="mt-6 flex items-center gap-3 sm:gap-4">
-            <span className="shrink-0 rounded-xl bg-white p-2 shadow-md">
-              {logoSrc ? (
-                <img src={logoSrc} alt="Logo Majlis Perwakilan Pelajar Sesi 2025/2026" className="h-14 w-14 object-contain sm:h-16 sm:w-16" />
-              ) : (
-                <Logo src={null} size={56} />
-              )}
-            </span>
-            <div className="min-w-0 space-y-0.5 text-[11px] font-bold leading-snug tracking-wide text-white/85 sm:text-xs">
-              {STATEMENT.signature.map((l) => (
-                <p key={l}>{l}</p>
-              ))}
-            </div>
-          </div>
-        </Reveal>
 
         <Reveal delay={100}>
-          <h1 className="mt-7 font-display text-[2.1rem] font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
+          <h1 className="mt-6 font-display text-[2.1rem] font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
             Majlis Perwakilan Pelajar{" "}
             <span className="text-gold-gradient">(MPP)</span>
           </h1>

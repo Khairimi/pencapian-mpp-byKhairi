@@ -8,18 +8,16 @@ import Navbar from "@/components/Navbar";
 import Statement from "@/components/Statement";
 import Contact from "@/components/Contact";
 import { getGalleryImages } from "@/lib/gallery";
-import { getLogoSrc } from "@/lib/logo";
 
 export default function Home() {
   // Dibaca daripada public/gallery semasa build
   const images = getGalleryImages();
-  const logoSrc = getLogoSrc();
 
   return (
     <>
-      <Navbar logoSrc={logoSrc} />
+      <Navbar />
       <main>
-        <Hero logoSrc={logoSrc} />
+        <Hero />
         <Statement />
         <Achievements />
         <Legacy />
@@ -27,7 +25,7 @@ export default function Home() {
         <FeedbackCTA />
         <Contact />
       </main>
-      <Footer logoSrc={logoSrc} />
+      <Footer />
     </>
   );
 }

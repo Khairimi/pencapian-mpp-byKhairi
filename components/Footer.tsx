@@ -2,20 +2,14 @@ import { Heart } from "lucide-react";
 import { HASHTAGS, NAV, STATEMENT, THANKS } from "@/lib/content";
 import Logo from "./Logo";
 
-export default function Footer({ logoSrc }: { logoSrc: string | null }) {
+export default function Footer() {
   return (
     <footer className="bg-uitm-night px-4 pb-10 pt-14 text-white sm:px-6">
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-4">
-              <span className="shrink-0 rounded-xl bg-white p-2 shadow-md">
-                {logoSrc ? (
-                  <img src={logoSrc} alt="Logo Majlis Perwakilan Pelajar Sesi 2025/2026" className="h-16 w-16 object-contain" />
-                ) : (
-                  <Logo src={null} size={64} />
-                )}
-              </span>
+            <div className="flex flex-col items-start gap-4">
+              <Logo className="rounded-xl bg-white p-2 shadow-md" imgClassName="h-16" />
               <div className="space-y-0.5">
               {STATEMENT.signature.map((l) => (
                 <p key={l} className="text-sm font-bold tracking-wide text-white/90">
