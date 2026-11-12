@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { GALLERY } from "./content";
 
 export type GalleryImage = {
   src: string;
@@ -19,10 +20,14 @@ function toCaption(file: string): string {
  * Letak gambar baharu dalam folder itu, commit & push — ia muncul secara automatik.
  */
 export function getGalleryImages(): GalleryImage[] {
+  const curated: GalleryImage[] = GALLERY.map((g) => ({
+    src: `/images/${encodeURIComponent(g.file)}`,
+    alt: g.caption,
+  }));
   const dir = path.join(process.cwd(), "public", "gallery");
   try {
-    if (!fs.existsSync(dir)) return [];
-    return fs
+    if (!fs.existsSync(dir)) return curated;
+    const extra = fs
       .readdirSync(dir)
       .filter((f) => IMAGE_EXT.has(path.extname(f).toLowerCase()) && !f.startsWith("."))
       .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }))
@@ -30,7 +35,8 @@ export function getGalleryImages(): GalleryImage[] {
         src: `/gallery/${encodeURIComponent(f)}`,
         alt: toCaption(f),
       }));
+    return [...curated, ...extra];
   } catch {
-    return [];
+    return curated;
   }
 }

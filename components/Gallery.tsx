@@ -73,23 +73,27 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
             ))}
           </div>
         ) : (
-          <ul className="mt-8 columns-2 sm:mt-10 gap-3 sm:gap-4 md:columns-3 lg:columns-4">
+          <ul className="mt-8 columns-1 gap-4 min-[480px]:columns-2 sm:mt-10 lg:columns-3">
             {images.map((img, i) => (
-              <li key={img.src} className="mb-3 break-inside-avoid sm:mb-4">
+              <li key={img.src} className="mb-4 break-inside-avoid">
                 <button
                   type="button"
                   onClick={() => setIndex(i)}
-                  className="group relative block w-full overflow-hidden rounded-2xl border border-[#FDB913]/25 bg-white/[0.03] shadow-sm transition-all duration-300 hover:border-[#FDB913]/60 focus:outline-none focus-visible:ring-4 focus-visible:ring-uitm-gold"
+                  className="card-royal group block w-full overflow-hidden rounded-2xl text-left shadow-sm hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-uitm-gold"
                   aria-label={`Besarkan gambar: ${img.alt}`}
                 >
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-auto w-full transition duration-500 group-hover:scale-105"
-                  />
-                  <span className="absolute inset-0 bg-gradient-to-t from-uitm-deep/60 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
+                  <span className="block overflow-hidden">
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-auto w-full transition duration-500 group-hover:scale-105"
+                    />
+                  </span>
+                  <span className="block border-t border-[#FDB913]/20 px-3.5 py-3 text-[13px] font-medium leading-snug text-white/85 sm:text-sm">
+                    {img.alt}
+                  </span>
                 </button>
               </li>
             ))}

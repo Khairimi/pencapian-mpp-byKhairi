@@ -264,3 +264,21 @@ export const HASHTAGS = [
   "#DemiMahasiswa",
   "#TerimaKasihMPP25/26",
 ];
+
+// ------------------------------------------------------------
+//  Galeri — gambar dalam public/images (nama fail sensitif huruf besar/kecil)
+// ------------------------------------------------------------
+export const GALLERY: { file: string; caption: string }[] = [
+  { file: "18 MPP.jpg", caption: "Barisan Majlis Perwakilan Pelajar UiTM Cawangan Terengganu Sesi 2025/2026" },
+  { file: "Pengumuman Keputusan.jpg", caption: "Hari Pengumuman Keputusan Pilihan Raya Kampus" },
+  { file: "Anugerah Khairi.jpg", caption: "Penganugerahan Kecemerlangan Kepimpinan — Khairi" },
+  { file: "Anugerah Raden.jpg", caption: "Penganugerahan Kecemerlangan Kepimpinan — Raden" },
+  { file: "berucap.jpg", caption: "Sesi Ucapan dan Libat Urus Bersama Warga Kampus" },
+  { file: "doczam.jpg", caption: "Program dan Pertemuan Bersama Pengurusan (Doc Zam)" },
+  { file: "NR Raden.jpg", caption: "Inisiatif Kebajikan Pelajar Non-Resident (NR)" },
+  { file: "Podcast YPS.jpg", caption: "Sesi Bual Bicara dan Podcast Bersama YPS" },
+  { file: "Podcast.jpg", caption: "Sesi Rakaman Podcast Suara Mahasiswa" },
+  { file: "Shah Alam.jpg", caption: "Lawatan Rasmi dan Persidangan Kepimpinan di UiTM Shah Alam" },
+  { file: "mcd.jpg", caption: "Program Kolaborasi dan Tajaan Bersama McDonald's" },
+  { file: "mppcare.jpg", caption: "MPP Care — Inisiatif Kebajikan Siswa" },
+];
