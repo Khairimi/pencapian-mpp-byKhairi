@@ -4,7 +4,7 @@ import Reveal from "./Reveal";
 
 export default function Contact() {
   return (
-    <section id="hubungi" className="overflow-x-hidden bg-uitm-royal2 px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+    <section id="hubungi" className="bg-uitm-royal2 px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
       <Reveal className="mx-auto max-w-5xl">
         <div className="card-royal rounded-[2rem] bg-uitm-plum/60 px-5 py-10 text-center text-white shadow-soft sm:px-12 sm:py-12">
           <span className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-uitm-gold/15 text-uitm-gold">
@@ -13,7 +13,7 @@ export default function Contact() {
           <h2 className="mx-auto mt-4 max-w-xl text-lg font-semibold leading-snug sm:text-xl">
             Sebarang pertanyaan atau rundingan, boleh hubungi:
           </h2>
-          <div className="mt-7 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">
+          <div className="mx-auto mt-7 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
             {CONTACTS.map((c) => (
               <a
                 key={c.phone}

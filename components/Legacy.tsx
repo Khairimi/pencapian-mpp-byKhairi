@@ -8,7 +8,7 @@ export default function Legacy() {
   return (
     <section id="legasi" className="relative overflow-hidden bg-uitm-royal3 px-4 py-12 text-white sm:px-6 sm:py-16 lg:py-20">
       <div className="motif pointer-events-none absolute inset-0 opacity-40" />
-      <div className="relative mx-auto max-w-6xl">
+      <div className="relative mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading
             light

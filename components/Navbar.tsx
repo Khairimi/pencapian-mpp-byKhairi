@@ -22,8 +22,8 @@ export default function Navbar() {
         scrolled || open ? "bg-[#1E0B36]/95 shadow-lg" : "bg-[#1E0B36]/90"
       }`}
     >
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <a href="#utama" className="flex items-center gap-2.5 text-white" onClick={() => setOpen(false)}>
+      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
+        <a href="#utama" className="flex min-h-[44px] items-center gap-2.5 text-white" onClick={() => setOpen(false)}>
           <Logo className="rounded-lg bg-white p-1 shadow-sm" imgClassName="h-8 sm:h-9" />
           <span className="text-sm font-semibold leading-tight">
             {SITE.campusShort}
@@ -36,7 +36,7 @@ export default function Navbar() {
             <li key={n.href}>
               <a
                 href={n.href}
-                className="whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-white/80 xl:px-4 transition hover:bg-[#FDB913]/10 hover:text-[#FDB913]"
+                className="inline-flex min-h-[44px] items-center whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-white/80 xl:px-4 transition hover:bg-[#FDB913]/10 hover:text-[#FDB913]"
               >
                 {n.label}
               </a>

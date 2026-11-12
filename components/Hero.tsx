@@ -25,7 +25,7 @@ function Corner({ className }: { className: string }) {
 export default function Hero() {
   const fmt = (n: number) => n.toLocaleString("en-US");
   return (
-    <section id="utama" className="relative overflow-hidden bg-gradient-to-b from-[#1E0B36] via-[#2A0E4A] to-[#260F42] text-white">
+    <section id="utama" className="relative min-h-[calc(100svh-4rem)] overflow-hidden bg-gradient-to-b from-[#1E0B36] via-[#2A0E4A] to-[#260F42] text-white">
       <div className="motif pointer-events-none absolute inset-0 opacity-60" />
       <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-uitm-gold/15 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-fuchsia-500/15 blur-3xl" />
@@ -50,7 +50,7 @@ export default function Hero() {
       <Corner className="bottom-3 left-3 -rotate-90 sm:left-5" />
       <Corner className="bottom-3 right-3 rotate-180 sm:right-5" />
 
-      <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-24 sm:px-6 sm:pb-24 sm:pt-28">
+      <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-24 sm:px-6 sm:pb-24 sm:pt-28">
         <div className="grid items-stretch gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
           {/* Kolum kiri */}
           <div className="flex min-w-0 flex-col">
@@ -112,7 +112,7 @@ export default function Hero() {
           </div>
 
           {/* Kolum kanan: statistik */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:h-full">
+        <div className="grid min-w-0 grid-cols-2 gap-3 sm:gap-4 lg:h-full">
           <Reveal delay={250} className="col-span-2">
             <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-3xl border border-[#FDB913]/25 bg-gradient-to-br from-uitm-gold to-uitm-antique p-6 text-uitm-deep shadow-gold transition hover:-translate-y-0.5 sm:p-8">
               <Trophy className="absolute -right-6 -top-6 h-40 w-40 opacity-15" aria-hidden="true" />

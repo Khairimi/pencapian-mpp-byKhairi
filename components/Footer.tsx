@@ -5,7 +5,7 @@ import Logo from "./Logo";
 export default function Footer() {
   return (
     <footer className="border-t border-[#FDB913]/25 bg-uitm-royal3 px-4 pb-8 pt-12 text-white sm:px-6">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <div className="flex flex-col items-start gap-4">
@@ -34,10 +34,10 @@ export default function Footer() {
 
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-uitm-gold">Navigasi</p>
-            <ul className="mt-4 grid grid-cols-2 gap-2 text-[15px] text-white/75 md:grid-cols-1">
+            <ul className="mt-4 grid grid-cols-2 gap-x-4 text-[15px] text-white/75">
               {NAV.map((n) => (
                 <li key={n.href}>
-                  <a href={n.href} className="inline-block py-1 hover:text-uitm-gold">
+                  <a href={n.href} className="inline-flex min-h-[44px] items-center hover:text-uitm-gold">
                     {n.label}
                   </a>
                 </li>

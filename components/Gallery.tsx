@@ -47,7 +47,7 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
 
   return (
     <section id="galeri" className="bg-uitm-royal px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <Reveal>
           <SectionHeading
             eyebrow="Galeri Lensa Kepimpinan"

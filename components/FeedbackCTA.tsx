@@ -7,7 +7,7 @@ export default function FeedbackCTA() {
   const hasQr = FEEDBACK_QR_IMAGE.trim() !== "";
 
   return (
-    <section id="maklum-balas" className="overflow-x-hidden bg-uitm-royal3 px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+    <section id="maklum-balas" className="bg-uitm-royal3 px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
       <Reveal className="mx-auto max-w-5xl">
         <div className="relative overflow-hidden card-royal rounded-[2rem] bg-uitm-plum/60 px-5 py-10 text-white shadow-soft sm:px-12 sm:py-14">
           <div className="motif pointer-events-none absolute inset-0 opacity-50" />
@@ -18,7 +18,7 @@ export default function FeedbackCTA() {
             }`}
           >
             {/* Teks + butang */}
-            <div className={hasQr ? "order-2 md:order-1" : ""}>
+            <div className="min-w-0">
               <div className={`flex w-fit gap-1 text-uitm-gold ${hasQr ? "mx-auto md:mx-0" : "mx-auto"}`} aria-hidden="true">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-6 w-6 fill-current" />
@@ -51,7 +51,7 @@ export default function FeedbackCTA() {
 
             {/* Kod QR */}
             {hasQr && (
-              <figure className="order-1 mx-auto w-full text-center max-w-[230px] sm:max-w-[260px] md:order-2 md:max-w-[290px]">
+              <figure className="mx-auto w-full max-w-[240px] text-center sm:max-w-[260px] md:max-w-[290px]">
                 <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-uitm-gold/40 bg-uitm-gold/10 px-4 py-1.5 text-xs font-semibold text-uitm-gold">
                   <QrCode className="h-4 w-4" aria-hidden="true" />
                   Imbas kod QR atau klik butang di bawah
