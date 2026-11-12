@@ -26,6 +26,7 @@ export const NAV = [
   { href: "#legasi", label: "Legasi" },
   { href: "#galeri", label: "Galeri" },
   { href: "#maklum-balas", label: "Maklum Balas" },
+  { href: "#hubungi", label: "Hubungi" },
 ];
 
 // ------------------------------------------------------------
@@ -33,10 +34,31 @@ export const NAV = [
 // ------------------------------------------------------------
 export const MANDATE = {
   total: 1309,
+  /** Jumlah pengundi berdaftar. Gantikan dengan angka tepat jika ada, cth. "1,412". */
+  registered: "1,400+",
   candidates: [
     { name: "Raden", votes: 655 },
     { name: "Khairi", votes: 654 },
   ],
+};
+
+// ------------------------------------------------------------
+//  Logo rasmi MPP (letak fail di public/images/logo-mpp.png)
+// ------------------------------------------------------------
+export const LOGO_PATH = "/images/logo-mpp.png";
+
+// ------------------------------------------------------------
+//  Naratif kampus: Amanah 2 Wakil MPP
+// ------------------------------------------------------------
+export const CAMPUS_STORY = {
+  badge: "Kampus FSKM • Amanah 2 Wakil MPP",
+  title: "Dua suara, satu kampus",
+  paragraphs: [
+    "UiTM Cawangan Terengganu Kampus Kuala Terengganu (UiTMCTKKT) merupakan kampus Fakulti Sains Komputer dan Matematik (FSKM).",
+    "Berbeza dengan kampus besar yang mempunyai barisan jawatankuasa yang ramai, kampus ini hanya mempunyai 2 orang wakil Majlis Perwakilan Pelajar (MPP), iaitu Khairi dan Raden. Kami berdua menggalas keseluruhan suara mahasiswa, urusan kebajikan, aduan fasiliti dan perhubungan bersama pihak pengurusan.",
+    "Menggalas tanggungjawab untuk seluruh warga kampus dengan hanya kekuatan dua orang bukanlah satu tugas yang mudah. Namun, berkat sokongan padu mahasiswa dan kerjasama semua pihak, setiap amanah dan manifesto tetap diusahakan hingga selesai demi legasi terbaik buat UiTMCTKKT.",
+  ],
+  reps: ["Khairi", "Raden"],
 };
 
 // ------------------------------------------------------------
@@ -53,8 +75,8 @@ export const STATEMENT = {
   closing: "Demi Mahasiswa, Bersama Mahasiswa.",
   signature: [
     "MAJLIS PERWAKILAN PELAJAR",
-    "KAMPUS KUALA TERENGGANU",
     "UiTM CAWANGAN TERENGGANU",
+    "KAMPUS KUALA TERENGGANU",
     "SESI 2025/2026",
   ],
 };
@@ -222,6 +244,11 @@ export const THANKS = [
   "Barisan Pensyarah & Staf",
   "Kelab & Persatuan",
   "Seluruh Mahasiswa/wi UiTMCTKKT",
+];
+
+export const CONTACTS = [
+  { name: "MPP Khairi", phone: "0149361720", whatsapp: "https://wa.me/60149361720" },
+  { name: "MPP Raden", phone: "0145547705", whatsapp: "https://wa.me/60145547705" },
 ];
 
 export const HASHTAGS = [

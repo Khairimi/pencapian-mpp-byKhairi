@@ -1,8 +1,9 @@
-import { ArrowDown, Building2, CalendarDays, Trophy, Vote, PartyPopper } from "lucide-react";
-import { MANDATE, SITE } from "@/lib/content";
+import { ArrowDown, Building2, CalendarDays, Cpu, Trophy, Vote, PartyPopper } from "lucide-react";
+import { CAMPUS_STORY, MANDATE, SITE, STATEMENT } from "@/lib/content";
+import Logo from "./Logo";
 import Reveal from "./Reveal";
 
-export default function Hero() {
+export default function Hero({ logoSrc }: { logoSrc: string | null }) {
   const fmt = (n: number) => n.toLocaleString("en-US");
   return (
     <section id="utama" className="relative overflow-hidden bg-gradient-to-b from-uitm-night via-uitm-deep to-uitm-purple text-white">
@@ -12,18 +13,38 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-28 sm:px-6 sm:pb-24 sm:pt-36">
         <Reveal>
-          <div className="inline-flex max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-2xl border border-uitm-gold/40 bg-uitm-gold/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-uitm-gold sm:rounded-full sm:text-xs">
-            <CalendarDays className="h-4 w-4 shrink-0" aria-hidden="true" />
-            <span>{SITE.badge}</span>
-            <span className="hidden text-uitm-gold/50 sm:inline">|</span>
-            <span className="text-white/85">
-              {SITE.date} ({SITE.hijri})
+          <div className="flex w-full max-w-xl items-center gap-3 rounded-2xl border border-uitm-gold/40 bg-uitm-gold/10 p-2.5 pr-4">
+            <span className="shrink-0 rounded-lg bg-[#FDB913]/15 p-2 text-uitm-gold">
+              <CalendarDays className="h-5 w-5 shrink-0" aria-hidden="true" />
             </span>
+            <p className="min-w-0 whitespace-normal break-words text-[11px] font-semibold uppercase leading-snug tracking-wide sm:text-xs">
+              <span className="block text-uitm-gold">{SITE.badge}</span>
+              <span className="block text-white/85">
+                {SITE.date} ({SITE.hijri})
+              </span>
+            </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={60}>
+          <div className="mt-6 flex items-center gap-3 sm:gap-4">
+            <span className="shrink-0 rounded-xl bg-white p-2 shadow-md">
+              {logoSrc ? (
+                <img src={logoSrc} alt="Logo Majlis Perwakilan Pelajar Sesi 2025/2026" className="h-14 w-14 object-contain sm:h-16 sm:w-16" />
+              ) : (
+                <Logo src={null} size={56} />
+              )}
+            </span>
+            <div className="min-w-0 space-y-0.5 text-[11px] font-bold leading-snug tracking-wide text-white/85 sm:text-xs">
+              {STATEMENT.signature.map((l) => (
+                <p key={l}>{l}</p>
+              ))}
+            </div>
           </div>
         </Reveal>
 
         <Reveal delay={100}>
-          <h1 className="mt-6 font-display text-[2.1rem] font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
+          <h1 className="mt-7 font-display text-[2.1rem] font-semibold leading-[1.1] sm:text-5xl lg:text-6xl">
             Majlis Perwakilan Pelajar{" "}
             <span className="text-gold-gradient">(MPP)</span>
           </h1>
@@ -36,6 +57,10 @@ export default function Hero() {
         <Reveal delay={200}>
           <p className="mt-6 border-l-4 border-uitm-gold pl-4 font-display text-xl italic text-white/95 sm:text-2xl">
             “{SITE.motto}”
+          </p>
+          <p className="mt-5 inline-flex max-w-full items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold text-white ring-1 ring-white/15 sm:text-sm">
+            <Cpu className="h-4 w-4 shrink-0 text-uitm-gold" aria-hidden="true" />
+            <span className="whitespace-normal break-words">{CAMPUS_STORY.badge}</span>
           </p>
         </Reveal>
 
@@ -64,7 +89,13 @@ export default function Hero() {
                   <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-uitm-gold">
                     <Vote className="h-4 w-4" aria-hidden="true" /> Mandat Undi Mahasiswa
                   </p>
-                  <p className="mt-3 font-display text-5xl font-bold sm:text-6xl">{fmt(MANDATE.total)}</p>
+                  <p className="mt-3 flex flex-wrap items-baseline gap-x-2 font-display font-bold">
+                    <span className="text-5xl sm:text-6xl">{fmt(MANDATE.total)}</span>
+                    <span className="text-2xl text-uitm-gold/80 sm:text-3xl">/ {MANDATE.registered}</span>
+                  </p>
+                  <p className="mt-1 text-xs leading-snug text-white/60">
+                    {fmt(MANDATE.total)} daripada keseluruhan pengundi berdaftar Kampus Kuala Terengganu
+                  </p>
                 </div>
               </div>
               <p className="mt-2 text-sm text-white/70">Penghargaan khas atas kepercayaan yang diberikan:</p>

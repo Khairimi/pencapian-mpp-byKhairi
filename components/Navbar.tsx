@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV, SITE } from "@/lib/content";
+import Logo from "./Logo";
 
-export default function Navbar() {
+export default function Navbar({ logoSrc }: { logoSrc: string | null }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -23,9 +24,7 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <a href="#utama" className="flex items-center gap-2.5 text-white" onClick={() => setOpen(false)}>
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-uitm-gold font-display text-[11px] font-bold text-uitm-deep">
-            MPP
-          </span>
+          <Logo src={logoSrc} size={40} />
           <span className="text-sm font-semibold leading-tight">
             {SITE.campusShort}
             <span className="block text-[11px] font-medium text-white/60">{SITE.session}</span>
