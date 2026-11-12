@@ -19,6 +19,7 @@ export const SITE = {
   motto: "Meneraju Aspirasi, Membina Kecemerlangan",
   badge: "Pemakluman Rasmi dan Penghargaan Pembubaran",
   date: "Jumaat, 13 November 2026",
+  dateBadge: "13 November 2026 • Jumaat",
   hijri: "3 Jamadilakhir 1448H",
 };
 
