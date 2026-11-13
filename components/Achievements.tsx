@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Star } from "lucide-react";
 import { ACHIEVEMENTS } from "@/lib/content";
-import DobiSpotlight from "./DobiSpotlight";
 import Icon from "./Icon";
 import Reveal from "./Reveal";
 import { SectionHeading } from "./Statement";
@@ -112,10 +111,6 @@ export default function Achievements() {
           </ul>
 
           {tab.footnote && <p className="mt-4 text-center text-sm italic text-uitm-ink/55">{tab.footnote}</p>}
-        </div>
-
-        <div className="mt-8">
-          <DobiSpotlight />
         </div>
       </div>
     </section>

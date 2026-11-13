@@ -26,6 +26,7 @@ export const SITE = {
 export const NAV = [
   { href: "#kenyataan", label: "Ucapan" },
   { href: "#pencapaian", label: "Pencapaian" },
+  { href: "#dobi", label: "App Dobi", highlight: true },
   { href: "#legasi", label: "Legasi" },
   { href: "#pemakluman", label: "Pemakluman" },
   { href: "#galeri", label: "Galeri" },
@@ -315,9 +316,9 @@ export const VIDEOS = [
 //  Kad sorotan aplikasi Dobi Sutera
 // ------------------------------------------------------------
 export const DOBI_APP = {
-  badge: "Inisiatif Kebajikan Digital • Kolej Sutera",
-  title: "Sistem Semakan Status Dobi Sutera",
-  desc: "Memudahkan pelajar Kolej Sutera menyemak ketersediaan mesin basuh dan pengering secara masa nyata sebelum turun ke bilik dobi — menjimatkan masa dan menjaga kebajikan harian mahasiswa.",
-  cta: "Buka Aplikasi Dobi • Click Me",
+  badge: "Inisiatif Kebajikan Digital Aktif • Kolej Sutera",
+  title: "Aplikasi Semakan Status Dobi Sutera",
+  desc: "Semak status mesin basuh dan pengering Kolej Sutera secara langsung dari telefon sebelum turun ke bilik dobi. Dibangunkan khas oleh MPP untuk memudahkan urusan harian mahasiswa.",
+  cta: "Buka Aplikasi Dobi Sutera • Click Me",
   url: "https://dobi-sutera-mpp.vercel.app/",
 };

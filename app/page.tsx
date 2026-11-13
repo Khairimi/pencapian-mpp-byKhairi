@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import Statement, { OfficialStatement } from "@/components/Statement";
 import Contact from "@/components/Contact";
 import VideoShowcase from "@/components/VideoShowcase";
+import DobiSuteraSpotlight from "@/components/DobiSuteraSpotlight";
 import { getGalleryImages } from "@/lib/gallery";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <Hero />
         <Statement />
         <Achievements />
+        <DobiSuteraSpotlight />
         <Legacy />
         <OfficialStatement />
         <Gallery images={images} />

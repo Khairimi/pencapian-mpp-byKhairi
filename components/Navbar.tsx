@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, WashingMachine, X } from "lucide-react";
 import { NAV, SITE } from "@/lib/content";
 import Logo from "./Logo";
 
@@ -20,7 +20,7 @@ export default function Navbar() {
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
-    const mq = window.matchMedia("(min-width: 1024px)");
+    const mq = window.matchMedia("(min-width: 1280px)");
     const onMq = () => mq.matches && setOpen(false);
     window.addEventListener("keydown", onKey);
     mq.addEventListener("change", onMq);
@@ -39,49 +39,67 @@ export default function Navbar() {
       <nav className="container-wide flex h-16 items-center justify-between gap-3">
         <a href="#utama" className="flex min-h-[44px] min-w-0 items-center gap-2.5 text-white" onClick={() => setOpen(false)}>
           <Logo className="rounded-lg bg-white p-1 shadow-sm" imgClassName="h-8 sm:h-9" />
-          <span className="truncate text-sm font-semibold leading-tight">
+          <span className="hidden truncate text-sm font-semibold leading-tight min-[430px]:block">
             {SITE.campusShort}
             <span className="block text-[11px] font-medium text-white/60">{SITE.session}</span>
           </span>
         </a>
 
-        <ul className="hidden items-center gap-0.5 lg:flex xl:gap-1">
+        <ul className="hidden items-center gap-0.5 xl:flex 2xl:gap-1">
           {NAV.map((n) => (
             <li key={n.href}>
               <a
                 href={n.href}
-                className="inline-flex min-h-[44px] items-center whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-white/80 xl:px-4 transition hover:bg-[#FDB913]/10 hover:text-[#FDB913]"
+                className={
+                  n.highlight
+                    ? "ml-1 inline-flex min-h-[44px] items-center gap-1.5 whitespace-nowrap rounded-full bg-[#FDB913] px-4 py-2 text-sm font-bold text-[#1E0B36] transition hover:bg-[#ffca3a]"
+                    : "inline-flex min-h-[44px] items-center whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-white/80 transition hover:bg-[#FDB913]/10 hover:text-[#FDB913] 2xl:px-4"
+                }
               >
+                {n.highlight && <WashingMachine className="h-4 w-4 shrink-0" aria-hidden="true" />}
                 {n.label}
               </a>
             </li>
           ))}
         </ul>
 
+        <div className="flex shrink-0 items-center gap-2 xl:hidden">
+          <a
+            href="#dobi"
+            onClick={() => setOpen(false)}
+            className="hidden min-h-[44px] items-center gap-1.5 whitespace-nowrap rounded-full bg-[#FDB913] px-3.5 text-sm font-bold text-[#1E0B36] transition hover:bg-[#ffca3a] min-[360px]:inline-flex"
+          >
+            <WashingMachine className="h-4 w-4 shrink-0" aria-hidden="true" />
+            App Dobi
+          </a>
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-controls="menu-telefon"
-          className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-white/20 text-white transition hover:bg-white/10 lg:hidden"
+          className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-white/20 text-white transition hover:bg-white/10"
           aria-label={open ? "Tutup menu" : "Buka menu"}
           aria-expanded={open}
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
+        </div>
       </nav>
 
       {open && (
         <ul
           id="menu-telefon"
-          className="container-wide max-h-[calc(100dvh-var(--nav-h))] space-y-1 overflow-y-auto overscroll-contain border-t border-white/10 pb-5 pt-3 lg:hidden"
+          className="container-wide max-h-[calc(100dvh-var(--nav-h))] space-y-1 overflow-y-auto overscroll-contain border-t border-white/10 pb-5 pt-3 xl:hidden"
         >
           {NAV.map((n) => (
             <li key={n.href}>
               <a
                 href={n.href}
                 onClick={() => setOpen(false)}
-                className="block min-h-[44px] rounded-xl px-4 py-3 text-base font-medium text-white/90 active:bg-[#FDB913]/10"
+                className={`flex min-h-[44px] items-center gap-2 rounded-xl px-4 py-3 text-base ${
+                  n.highlight ? "bg-[#FDB913] font-bold text-[#1E0B36]" : "font-medium text-white/90 active:bg-[#FDB913]/10"
+                }`}
               >
+                {n.highlight && <WashingMachine className="h-5 w-5 shrink-0" aria-hidden="true" />}
                 {n.label}
               </a>
             </li>
