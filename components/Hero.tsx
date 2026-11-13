@@ -1,5 +1,5 @@
 import { ArrowDown, ArrowRight, Building2, CalendarDays, Landmark, PartyPopper, Trophy, Vote } from "lucide-react";
-import { MANDATE, SITE } from "@/lib/content";
+import { MANDATE, MANIFESTO_PERCENT, SITE } from "@/lib/content";
 import Reveal from "./Reveal";
 
 /** Bucu hiasan geometri emas halus */
@@ -120,7 +120,7 @@ export default function Hero() {
                 <Trophy className="h-3.5 w-3.5" aria-hidden="true" /> Manifesto
               </span>
               <div className="relative">
-                <p className="font-display text-[clamp(3.5rem,2.6rem+4vw,6rem)] font-bold leading-none">100%</p>
+                <p className="whitespace-nowrap font-display text-[clamp(2.75rem,2rem+3.2vw,4.75rem)] font-bold leading-none">{MANIFESTO_PERCENT}</p>
                 <p className="mt-3 text-lg font-bold sm:text-xl">Pencapaian Manifesto</p>
                 <p className="mt-1 text-sm font-medium text-uitm-deep/80 sm:text-base">
                   Disempurnakan sepenuhnya demi warga kampus.

@@ -7,6 +7,7 @@ import Legacy from "@/components/Legacy";
 import Navbar from "@/components/Navbar";
 import Statement, { OfficialStatement } from "@/components/Statement";
 import Contact from "@/components/Contact";
+import VideoShowcase from "@/components/VideoShowcase";
 import { getGalleryImages } from "@/lib/gallery";
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
         <Legacy />
         <OfficialStatement />
         <Gallery images={images} />
+        <VideoShowcase />
         <FeedbackCTA />
         <Contact />
       </main>

@@ -79,23 +79,18 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
                 <button
                   type="button"
                   onClick={() => setIndex(i)}
-                  className="card-royal group block w-full overflow-hidden rounded-2xl text-left shadow-sm hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-uitm-gold"
+                  className="group block w-full overflow-hidden rounded-xl border border-[#FDB913]/25 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#FDB913]/60 focus:outline-none focus-visible:ring-4 focus-visible:ring-uitm-gold"
                   aria-label={`Besarkan gambar: ${img.alt}`}
                 >
-                  <span className="block overflow-hidden">
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      width={img.width}
-                      height={img.height}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-auto w-full transition duration-500 group-hover:scale-105"
-                    />
-                  </span>
-                  <span className="block border-t border-[#FDB913]/20 px-3 py-2.5 text-xs font-medium leading-snug text-white/85 sm:px-3.5 sm:py-3 sm:text-sm">
-                    {img.alt}
-                  </span>
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    width={img.width}
+                    height={img.height}
+                    loading="lazy"
+                    decoding="async"
+                    className="block h-auto w-full transition duration-500 group-hover:scale-105"
+                  />
                 </button>
               </li>
             ))}

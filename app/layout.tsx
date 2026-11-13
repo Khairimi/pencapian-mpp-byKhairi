@@ -4,7 +4,7 @@ import "@fontsource-variable/fraunces";
 import "./globals.css";
 
 const description =
-  "Pemakluman rasmi & penghargaan pembubaran MPP UiTM Cawangan Terengganu Kampus Kuala Terengganu Sesi 2025/2026 — 100% manifesto disempurnakan.";
+  "Pemakluman rasmi & penghargaan pembubaran MPP UiTM Cawangan Terengganu Kampus Kuala Terengganu Sesi 2025/2026 — 99.99% manifesto disempurnakan.";
 
 export const metadata: Metadata = {
   title: "MPP UiTMCTKKT Sesi 2025/2026 | Penghargaan Pembubaran",

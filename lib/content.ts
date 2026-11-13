@@ -29,6 +29,7 @@ export const NAV = [
   { href: "#legasi", label: "Legasi" },
   { href: "#pemakluman", label: "Pemakluman" },
   { href: "#galeri", label: "Galeri" },
+  { href: "#video", label: "Video" },
   { href: "#maklum-balas", label: "Maklum Balas" },
   { href: "#hubungi", label: "Hubungi" },
 ];
@@ -281,4 +282,42 @@ export const GALLERY: { file: string; caption: string }[] = [
   { file: "Shah Alam.jpg", caption: "Lawatan Rasmi dan Persidangan Kepimpinan di UiTM Shah Alam" },
   { file: "mcd.jpg", caption: "Program Kolaborasi dan Tajaan Bersama McDonald's" },
   { file: "mppcare.jpg", caption: "MPP Care — Inisiatif Kebajikan Siswa" },
+  { file: "aks-anugerah-kecemerlangan-siswa.jpg", caption: "Ucapan di Majlis Anugerah Kecemerlangan Siswa (AKS) UiTM Cawangan Terengganu" },
+  { file: "pemasaran-digital-zon-timur.jpg", caption: "Penyampaian Cenderamata di Program Pemasaran Digital Zon Timur, UiTM Kelantan" },
+  { file: "mpp-care-breakfast-boost.jpg", caption: "Poster MPP Care Breakfast Boost — Sarapan Percuma untuk 100 Pelajar" },
+  { file: "gotong-royong-masak-bubur.jpg", caption: "Gotong-royong Memasak Bubur untuk Warga Kampus" },
 ];
+
+// ------------------------------------------------------------
+//  Statistik manifesto (Hero)
+// ------------------------------------------------------------
+export const MANIFESTO_PERCENT = "99.99%";
+
+// ------------------------------------------------------------
+//  Sorotan Video Kepimpinan (fail dalam public/video)
+// ------------------------------------------------------------
+export const VIDEOS = [
+  {
+    src: "/video/videokhairi.mp4",
+    poster: "/video/videokhairi-poster.jpg",
+    title: "Sorotan Kepimpinan & Ucapan Khairi",
+    name: "Khairi Rahimi — Wakil MPP UiTMCTKKT",
+  },
+  {
+    src: "/video/videoraden.mp4",
+    poster: "/video/videoraden-poster.jpg",
+    title: "Sorotan Kepimpinan & Inisiatif Raden",
+    name: "Raden — Wakil MPP UiTMCTKKT",
+  },
+];
+
+// ------------------------------------------------------------
+//  Kad sorotan aplikasi Dobi Sutera
+// ------------------------------------------------------------
+export const DOBI_APP = {
+  badge: "Inisiatif Kebajikan Digital • Kolej Sutera",
+  title: "Sistem Semakan Status Dobi Sutera",
+  desc: "Memudahkan pelajar Kolej Sutera menyemak ketersediaan mesin basuh dan pengering secara masa nyata sebelum turun ke bilik dobi — menjimatkan masa dan menjaga kebajikan harian mahasiswa.",
+  cta: "Buka Aplikasi Dobi • Click Me",
+  url: "https://dobi-sutera-mpp.vercel.app/",
+};
