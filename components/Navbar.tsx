@@ -32,7 +32,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b border-[#FDB913]/20 backdrop-blur-md transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b border-white/10 backdrop-blur-md transition-all duration-300 ${
         scrolled || open ? "bg-[#1E0B36]/95 shadow-lg" : "bg-[#1E0B36]/90"
       }`}
     >
@@ -62,7 +62,7 @@ export default function Navbar() {
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-controls="menu-telefon"
-          className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-[#FDB913]/40 text-[#FDB913] transition hover:bg-[#FDB913]/10 lg:hidden"
+          className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-white/20 text-white transition hover:bg-white/10 lg:hidden"
           aria-label={open ? "Tutup menu" : "Buka menu"}
           aria-expanded={open}
         >
@@ -73,7 +73,7 @@ export default function Navbar() {
       {open && (
         <ul
           id="menu-telefon"
-          className="container-wide max-h-[calc(100dvh-var(--nav-h))] space-y-1 overflow-y-auto overscroll-contain border-t border-[#FDB913]/20 pb-5 pt-3 lg:hidden"
+          className="container-wide max-h-[calc(100dvh-var(--nav-h))] space-y-1 overflow-y-auto overscroll-contain border-t border-white/10 pb-5 pt-3 lg:hidden"
         >
           {NAV.map((n) => (
             <li key={n.href}>

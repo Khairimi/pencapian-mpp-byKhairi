@@ -23,8 +23,12 @@ export default function Home() {
         <Legacy />
         <OfficialStatement />
         <Gallery images={images} />
-        <FeedbackCTA />
-        <Contact />
+        <section aria-label="Maklum balas dan hubungi" className="section bg-uitm-ivory">
+          <div className="container-mid">
+            <FeedbackCTA />
+            <Contact />
+          </div>
+        </section>
       </main>
       <Footer />
     </>

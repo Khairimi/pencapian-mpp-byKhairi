@@ -1,189 +1,108 @@
-import { ArrowDown, ArrowRight, Building2, CalendarDays, Landmark, PartyPopper, Trophy, Vote } from "lucide-react";
-import { MANDATE, SITE } from "@/lib/content";
+import { ArrowDown, ArrowRight, Building2, CalendarDays, PartyPopper, Trophy, Vote } from "lucide-react";
+import { CAMPUS_STORY, MANDATE, SITE } from "@/lib/content";
 import Reveal from "./Reveal";
 
-/** Bucu hiasan geometri emas halus */
-function Corner({ className }: { className: string }) {
-  return (
-    <svg
-      viewBox="0 0 120 120"
-      className={`pointer-events-none absolute hidden h-28 w-28 text-[#FDB913] opacity-30 sm:block lg:h-36 lg:w-36 ${className}`}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.2"
-      aria-hidden="true"
-    >
-      <path d="M4 116V4h112" />
-      <path d="M14 106V14h92" />
-      <path d="M24 4v28M4 24h28" />
-      <path d="M14 14l22 22M36 36l10-10M36 36l-10 10" />
-      <circle cx="36" cy="36" r="4" />
-    </svg>
-  );
-}
+const fmt = (n: number) => n.toLocaleString("en-US");
 
 export default function Hero() {
-  const fmt = (n: number) => n.toLocaleString("en-US");
   return (
-    <section id="utama" className="relative overflow-hidden bg-gradient-to-b from-[#1E0B36] via-[#2A0E4A] to-[#260F42] text-white">
-      <div className="motif pointer-events-none absolute inset-0 opacity-60" />
-      <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-uitm-gold/15 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-fuchsia-500/15 blur-3xl" />
+    <section id="utama" className="relative overflow-hidden bg-uitm-royal text-white">
+      {/* Hiasan hanya di tepi: cahaya lembut di bucu, jauh dari teks */}
+      <div className="pointer-events-none absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-uitm-purple/50 blur-3xl" aria-hidden="true" />
+      <div className="pointer-events-none absolute -bottom-48 -left-40 h-[24rem] w-[24rem] rounded-full bg-uitm-gold/[0.07] blur-3xl" aria-hidden="true" />
 
-      {/* Garisan gelombang emas */}
-      <svg
-        viewBox="0 0 800 600"
-        preserveAspectRatio="xMaxYMid slice"
-        className="pointer-events-none absolute inset-y-0 right-0 hidden h-full w-3/5 text-[#FDB913] opacity-20 lg:block"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1"
-        aria-hidden="true"
-      >
-        {[0, 1, 2, 3, 4, 5, 6].map((i) => (
-          <path key={i} d={`M0 ${200 + i * 28} C 200 ${120 + i * 28}, 350 ${340 + i * 28}, 560 ${250 + i * 28} S 760 ${150 + i * 28}, 800 ${200 + i * 28}`} />
-        ))}
-      </svg>
-
-      <Corner className="left-3 top-20 sm:left-5" />
-      <Corner className="right-3 top-20 rotate-90 sm:right-5" />
-      <Corner className="bottom-3 left-3 -rotate-90 sm:left-5" />
-      <Corner className="bottom-3 right-3 rotate-180 sm:right-5" />
-
-      <div className="container-wide relative pb-[var(--section-py)] pt-[calc(var(--nav-h)+2rem)] sm:pt-[calc(var(--nav-h)+3rem)]">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-12 xl:gap-16">
-          {/* Kolum kiri */}
-          <div className="flex min-w-0 flex-col">
+      <div className="container-wide relative pb-12 pt-[calc(var(--nav-h)+2.25rem)] sm:pb-14 sm:pt-[calc(var(--nav-h)+3rem)] lg:pb-16 lg:pt-[calc(var(--nav-h)+3.5rem)]">
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+          {/* Kolum kiri: mesej utama */}
+          <div className="min-w-0">
             <Reveal>
-              <div className="flex items-center gap-4 sm:gap-5">
-                <span className="shrink-0 border-r border-[#FDB913]/40 pr-4 text-[#FDB913] sm:pr-5">
-                  <Landmark className="h-12 w-12 sm:h-16 sm:w-16" aria-hidden="true" />
-                </span>
-                <div className="min-w-0">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-white/90 sm:text-xs">
-                    Pemakluman Rasmi
-                  </p>
-                  <h1 className="mt-1 font-display text-[clamp(1.75rem,1.1rem+2.7vw,3.75rem)] font-bold leading-[1.05] text-[#FDB913] [text-wrap:balance]">
-                    Pembubaran MPP
-                  </h1>
-                  <p className="mt-2 text-sm text-white sm:text-base lg:text-lg">Penghargaan Kepimpinan Sesi 2025/2026</p>
-                </div>
-              </div>
-
-              <p className="mt-5 inline-flex max-w-full items-center gap-2 rounded-full border border-[#FDB913]/50 bg-[#FDB913]/5 px-4 py-2 text-xs font-semibold text-white sm:text-sm">
-                <CalendarDays className="h-4 w-4 shrink-0 text-[#FDB913]" aria-hidden="true" />
-                <span>{SITE.dateBadge}</span>
+              <p className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-semibold uppercase tracking-[0.16em] text-uitm-gold sm:text-[13px]">
+                <CalendarDays className="h-4 w-4 shrink-0" aria-hidden="true" />
+                <span>Pemakluman Rasmi</span>
+                <span className="text-uitm-gold/50" aria-hidden="true">·</span>
+                <span className="whitespace-nowrap">{SITE.dateBadge}</span>
+              </p>
+              <h1 className="mt-4 font-display text-[clamp(2.5rem,1.6rem+4vw,4.5rem)] font-bold leading-[1.02] tracking-tight [text-wrap:balance]">
+                Pembubaran <span className="text-uitm-gold">MPP</span>
+              </h1>
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
+                Majlis Perwakilan Pelajar UiTM Cawangan Terengganu, Kampus Kuala Terengganu{" "}
+                <span className="font-semibold text-white">{SITE.session}</span>
+              </p>
+              <p className="mt-3 max-w-xl text-[15px] leading-relaxed text-white/65 sm:text-base">
+                Terima kasih atas kepercayaan, sokongan dan kebersamaan seluruh mahasiswa sepanjang tempoh kami berkhidmat.
               </p>
             </Reveal>
 
             <Reveal delay={120}>
-              <div className="mt-7 border-t border-[#FDB913]/40 pt-7">
-                <div className="space-y-0.5 text-base leading-relaxed text-white/90 sm:text-lg">
-                  {SITE.subtitle.map((line) => (
-                    <p key={line}>{line}</p>
-                  ))}
-                </div>
-                <p className="mt-4 max-w-md text-sm leading-relaxed text-white/75 sm:text-base">
-                  Terima kasih atas kepercayaan, sokongan dan kebersamaan seluruh mahasiswa.
-                </p>
-                <p className="mt-5 font-display text-xl italic text-[#FDB913] sm:text-2xl">“{SITE.motto}”</p>
-                <p className="mt-5 border-l-2 border-[#FDB913] pl-3 text-xs font-semibold uppercase tracking-wider text-white/90 sm:text-sm">
-                  FSKM • Amanah Dua Wakil MPP
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={200} className="mt-8">
-              <div className="flex flex-col gap-3 min-[480px]:flex-row min-[480px]:flex-wrap">
-                <a
-                  href="#pencapaian"
-                  className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-[#FDB913] px-6 py-3 text-sm font-bold text-uitm-deep shadow-gold transition hover:-translate-y-0.5 hover:bg-[#ffc93a]"
-                >
-                  Lihat Pencapaian <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </a>
+              <div className="mt-7 flex flex-col gap-3 min-[480px]:flex-row">
                 <a
                   href="#pemakluman"
-                  className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white/85 transition hover:-translate-y-0.5 hover:border-uitm-gold hover:text-uitm-gold"
+                  className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-uitm-gold px-6 py-3 text-sm font-bold text-uitm-royal transition hover:-translate-y-0.5 hover:bg-[#ffc93a]"
                 >
                   Baca Kenyataan Rasmi <ArrowDown className="h-4 w-4" aria-hidden="true" />
                 </a>
+                <a
+                  href="#pencapaian"
+                  className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/5"
+                >
+                  Lihat Pencapaian <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+              </div>
+              <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-white/60">
+                <span className="font-display italic text-white/80">“{SITE.motto}”</span>
+                <span className="hidden h-4 w-px bg-white/20 sm:block" aria-hidden="true" />
+                <span>{CAMPUS_STORY.badge}</span>
               </div>
             </Reveal>
           </div>
 
-          {/* Kolum kanan: statistik */}
-          <div className="grid min-w-0 grid-cols-2 gap-3 sm:gap-4">
-          <Reveal delay={250} className="col-span-2">
-            <div className="relative flex h-full flex-col justify-between gap-5 overflow-hidden rounded-3xl border border-[#FDB913]/25 bg-gradient-to-br from-uitm-gold to-uitm-antique p-5 text-uitm-deep shadow-gold transition hover:-translate-y-0.5 sm:p-7">
-              <Trophy className="pointer-events-none absolute -right-6 -top-6 h-32 w-32 opacity-15 sm:h-40 sm:w-40" aria-hidden="true" />
-              <span className="relative inline-flex w-fit items-center gap-2 rounded-full bg-uitm-deep px-3 py-1 text-xs font-bold uppercase tracking-wider text-uitm-gold">
-                <Trophy className="h-3.5 w-3.5" aria-hidden="true" /> Manifesto
-              </span>
-              <div className="relative">
-                <p className="font-display text-[clamp(3.5rem,2.6rem+4vw,6rem)] font-bold leading-none">100%</p>
-                <p className="mt-3 text-lg font-bold sm:text-xl">Pencapaian Manifesto</p>
-                <p className="mt-1 text-sm font-medium text-uitm-deep/80 sm:text-base">
-                  Disempurnakan sepenuhnya demi warga kampus.
-                </p>
+          {/* Kolum kanan: statistik padat 2×2 */}
+          <Reveal delay={200} className="min-w-0">
+            <div className="grid grid-cols-2 gap-3 rounded-3xl border border-white/10 bg-white/[0.04] p-3 sm:gap-3.5 sm:p-4">
+              <div className="flex min-w-0 flex-col justify-between rounded-2xl bg-uitm-gold p-4 text-uitm-royal sm:p-5">
+                <Trophy className="h-6 w-6" aria-hidden="true" />
+                <div className="mt-5">
+                  <p className="font-display text-[clamp(2.25rem,1.8rem+2vw,3.25rem)] font-bold leading-none">100%</p>
+                  <p className="mt-1.5 text-sm font-bold leading-snug">Pencapaian Manifesto</p>
+                </div>
               </div>
-              <ul className="relative flex flex-wrap gap-2 border-t border-uitm-deep/15 pt-4 text-xs font-semibold">
-                {["5 Naik Taraf Infrastruktur", "15+ Program Berimpak", "Suara & Kebajikan Mahasiswa"].map((t) => (
-                  <li key={t} className="rounded-full bg-uitm-deep/10 px-3 py-1.5 ring-1 ring-uitm-deep/10">
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
 
-          <Reveal delay={320} className="col-span-2">
-            <div className="glass h-full rounded-3xl p-5 sm:p-7">
-              <div className="flex items-start justify-between gap-4">
-                <div className="min-w-0">
-                  <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-uitm-gold">
-                    <Vote className="h-4 w-4" aria-hidden="true" /> Mandat Undi Mahasiswa
+              <div className="flex min-w-0 flex-col justify-between rounded-2xl bg-white/[0.06] p-4 sm:p-5">
+                <Vote className="h-6 w-6 text-uitm-gold" aria-hidden="true" />
+                <div className="mt-5">
+                  <p className="font-display font-bold leading-none">
+                    <span className="text-[clamp(1.875rem,1.5rem+1.6vw,2.75rem)]">{fmt(MANDATE.total)}</span>
+                    <span className="ml-1 whitespace-nowrap text-base text-uitm-gold/80 sm:text-lg">/ {MANDATE.registered}</span>
                   </p>
-                  <p className="mt-3 flex flex-wrap items-baseline gap-x-2 font-display font-bold">
-                    <span className="text-[clamp(2.5rem,2rem+2.5vw,3.75rem)] leading-none">{fmt(MANDATE.total)}</span>
-                    <span className="text-2xl text-uitm-gold/80 sm:text-3xl">/ {MANDATE.registered}</span>
-                  </p>
-                  <p className="mt-1 text-xs leading-snug text-white/60">
-                    {fmt(MANDATE.total)} daripada keseluruhan pengundi berdaftar Kampus Kuala Terengganu
+                  <p className="mt-1.5 text-sm font-semibold leading-snug">Mandat Undi Mahasiswa</p>
+                  <p className="mt-1 text-xs leading-snug text-white/55">
+                    {MANDATE.candidates.map((c) => `${c.name} ${fmt(c.votes)}`).join(" · ")}
                   </p>
                 </div>
               </div>
-              <p className="mt-2 text-sm text-white/70">Penghargaan khas atas kepercayaan yang diberikan:</p>
-              <div className="mt-4 grid grid-cols-2 gap-3">
-                {MANDATE.candidates.map((c) => (
-                  <div key={c.name} className="min-w-0 rounded-2xl bg-white/10 px-3 py-3 sm:px-4">
-                    <p className="text-2xl font-bold text-uitm-gold">{fmt(c.votes)}</p>
-                    <p className="text-xs text-white/75">Undi ({c.name})</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal>
 
-          <Reveal delay={390}>
-            <div className="glass flex h-full min-w-0 flex-col justify-center gap-3 rounded-3xl p-4 transition hover:-translate-y-0.5 sm:p-6">
-              <Building2 className="h-7 w-7 text-uitm-gold" aria-hidden="true" />
-              <div>
-                <p className="font-display text-4xl font-bold leading-none sm:text-5xl">5</p>
-                <p className="mt-1.5 text-sm leading-snug text-white/80">Naik Taraf Infrastruktur Utama</p>
+              <div className="flex min-w-0 items-center gap-3 rounded-2xl bg-white/[0.06] p-4 sm:p-5">
+                <Building2 className="h-6 w-6 shrink-0 text-uitm-gold" aria-hidden="true" />
+                <div className="min-w-0">
+                  <p className="font-display text-2xl font-bold leading-none sm:text-3xl">5</p>
+                  <p className="mt-1 text-xs leading-snug text-white/70 sm:text-sm">Naik Taraf Infrastruktur</p>
+                </div>
               </div>
-            </div>
-          </Reveal>
 
-          <Reveal delay={460}>
-            <div className="glass flex h-full min-w-0 flex-col justify-center gap-3 rounded-3xl p-4 transition hover:-translate-y-0.5 sm:p-6">
-              <PartyPopper className="h-7 w-7 text-uitm-gold" aria-hidden="true" />
-              <div>
-                <p className="font-display text-4xl font-bold leading-none sm:text-5xl">15+</p>
-                <p className="mt-1.5 text-sm leading-snug text-white/80">Program Berimpak Tinggi</p>
+              <div className="flex min-w-0 items-center gap-3 rounded-2xl bg-white/[0.06] p-4 sm:p-5">
+                <PartyPopper className="h-6 w-6 shrink-0 text-uitm-gold" aria-hidden="true" />
+                <div className="min-w-0">
+                  <p className="font-display text-2xl font-bold leading-none sm:text-3xl">15+</p>
+                  <p className="mt-1 text-xs leading-snug text-white/70 sm:text-sm">Program Berimpak Tinggi</p>
+                </div>
               </div>
+
+              <p className="col-span-2 px-1 pb-1 text-xs leading-snug text-white/50">
+                {fmt(MANDATE.total)} daripada keseluruhan pengundi berdaftar Kampus Kuala Terengganu.
+              </p>
             </div>
           </Reveal>
-        </div>
         </div>
       </div>
     </section>
