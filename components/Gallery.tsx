@@ -81,7 +81,7 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
                   <button
                     type="button"
                     onClick={() => setIndex(i)}
-                    className="group relative block aspect-[4/3] w-full overflow-hidden rounded-xl border border-uitm-line bg-uitm-ivory transition-colors hover:border-uitm-gold focus:outline-none focus-visible:ring-4 focus-visible:ring-uitm-gold"
+                    className="group relative block aspect-[4/3] w-full overflow-hidden rounded-xl border border-[#FDB913]/30 bg-uitm-ivory transition-colors hover:border-[#FDB913]/70 focus:outline-none focus-visible:ring-4 focus-visible:ring-uitm-gold"
                     aria-label={`Besarkan gambar: ${img.alt}`}
                   >
                     <img

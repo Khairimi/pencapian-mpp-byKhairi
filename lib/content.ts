@@ -287,6 +287,7 @@ export const GALLERY: { file: string; caption: string }[] = [
   { file: "pemasaran-digital-zon-timur.jpg", caption: "Penyampaian Cenderamata di Program Pemasaran Digital Zon Timur, UiTM Kelantan" },
   { file: "mpp-care-breakfast-boost.jpg", caption: "Poster MPP Care Breakfast Boost — Sarapan Percuma untuk 100 Pelajar" },
   { file: "gotong-royong-masak-bubur.jpg", caption: "Gotong-royong Memasak Bubur untuk Warga Kampus" },
+  { file: "lawatan-muhibah-non-resident.jpg", caption: "Lawatan Muhibah Bersama Mahasiswa Non-Resident (NR)" },
 ];
 
 // ------------------------------------------------------------
