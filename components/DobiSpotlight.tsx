@@ -4,9 +4,9 @@ import { DOBI_APP } from "@/lib/content";
 /** Kad sorotan aplikasi kebajikan digital Dobi Sutera */
 export default function DobiSpotlight() {
   return (
-    <div className="flex flex-col gap-6 rounded-2xl border-2 border-[#FDB913]/50 bg-gradient-to-br from-[#2A0E4A] to-[#1E0B36] p-6 shadow-lg sm:p-8 md:flex-row md:items-center md:justify-between">
+    <div className="flex flex-col gap-6 rounded-2xl bg-uitm-royal p-6 sm:p-8 md:flex-row md:items-center md:justify-between">
       <div className="flex min-w-0 gap-4">
-        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[#FDB913]/15 text-uitm-gold">
+        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-white/10 text-uitm-gold">
           <WashingMachine className="h-6 w-6" aria-hidden="true" />
         </span>
         <div className="min-w-0">

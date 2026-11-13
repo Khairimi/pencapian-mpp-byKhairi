@@ -6,20 +6,21 @@ import { SectionHeading } from "./Statement";
 /** Sorotan Video Kepimpinan — dua video menegak, tanpa autoplay (jimat data). */
 export default function VideoShowcase() {
   return (
-    <section id="video" className="section bg-uitm-royal2">
+    <section id="video" className="section bg-uitm-royal text-white">
       <div className="container-wide">
         <Reveal>
           <SectionHeading
             eyebrow="Sorotan Video Kepimpinan"
             title="Perjalanan dua wakil, satu amanah"
             desc="Detik-detik kepimpinan, ucapan dan inisiatif dua wakil MPP UiTMCTKKT sepanjang Sesi 2025/2026."
+            tone="dark"
           />
         </Reveal>
 
-        <div className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-8 sm:mt-10 md:grid-cols-2">
+        <div className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-6 sm:mt-10 md:grid-cols-2 md:gap-8">
           {VIDEOS.map((v, i) => (
             <Reveal key={v.src} delay={i * 90}>
-              <figure className="rounded-2xl border border-[#FDB913]/35 bg-[#2A0E4A]/60 p-3 shadow-xl sm:p-4">
+              <figure className="card-royal rounded-2xl p-3 sm:p-4">
                 <div className="mx-auto aspect-[9/16] max-h-[540px] w-full overflow-hidden rounded-xl bg-black">
                   <video
                     controls

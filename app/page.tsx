@@ -25,8 +25,12 @@ export default function Home() {
         <OfficialStatement />
         <Gallery images={images} />
         <VideoShowcase />
-        <FeedbackCTA />
-        <Contact />
+        <section aria-label="Maklum balas dan hubungi" className="section bg-uitm-ivory">
+          <div className="container-mid">
+            <FeedbackCTA />
+            <Contact />
+          </div>
+        </section>
       </main>
       <Footer />
     </>

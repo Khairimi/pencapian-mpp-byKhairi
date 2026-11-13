@@ -1,13 +1,21 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, Images, ImageIcon, X } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Images, ImageIcon, X } from "lucide-react";
 import type { GalleryImage } from "@/lib/gallery";
 import Reveal from "./Reveal";
 import { SectionHeading } from "./Statement";
 
+/** Bilangan thumbnail yang dipaparkan sebelum "Lihat Semua Gambar" */
+const INITIAL_COUNT = 8;
+/** Pada telefon (bawah md), hanya 6 pertama dipaparkan sebelum dikembangkan */
+const INITIAL_COUNT_MOBILE = 6;
+
 export default function Gallery({ images }: { images: GalleryImage[] }) {
   const [index, setIndex] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState(false);
+  const visible = showAll ? images : images.slice(0, INITIAL_COUNT);
+  const hidden = images.length - INITIAL_COUNT_MOBILE;
   const isOpen = index !== null;
 
   const close = useCallback(() => setIndex(null), []);
@@ -46,7 +54,7 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
   };
 
   return (
-    <section id="galeri" className="section bg-uitm-royal">
+    <section id="galeri" className="section bg-white">
       <div className="container-wide">
         <Reveal>
           <SectionHeading
@@ -57,44 +65,60 @@ export default function Gallery({ images }: { images: GalleryImage[] }) {
         </Reveal>
 
         {images.length === 0 ? (
-          <div className="mt-8 grid grid-cols-2 sm:mt-10 gap-3 sm:grid-cols-3 sm:gap-4">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div
-                key={i}
-                className={`grid place-items-center rounded-3xl border-2 border-dashed border-[#FDB913]/25 bg-white/[0.03] ${
-                  i === 0 ? "col-span-2 row-span-2 aspect-square sm:col-span-1 sm:row-span-1" : "aspect-square"
-                } ${i === 0 ? "sm:aspect-square" : ""}`}
-              >
-                <div className="flex flex-col items-center gap-2 p-4 text-center text-uitm-gold/50">
-                  <ImageIcon className="h-8 w-8" aria-hidden="true" />
-                  {i === 0 && <p className="text-sm font-medium">Gambar akan dipaparkan di sini tidak lama lagi.</p>}
-                </div>
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 md:grid-cols-4">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <div key={i} className="grid aspect-[4/3] place-items-center rounded-xl border border-dashed border-uitm-line bg-uitm-ivory">
+                <ImageIcon className="h-7 w-7 text-uitm-purple/30" aria-hidden="true" />
               </div>
             ))}
+            <p className="col-span-2 text-center text-sm text-uitm-ink/55 md:col-span-4">Gambar akan dipaparkan di sini tidak lama lagi.</p>
           </div>
         ) : (
-          <ul className="mt-8 columns-1 gap-3 min-[360px]:columns-2 sm:mt-10 sm:gap-4 lg:columns-3">
-            {images.map((img, i) => (
-              <li key={img.src} className="mb-3 break-inside-avoid sm:mb-4">
+          <>
+            <ul className="mt-8 grid grid-cols-2 gap-2.5 sm:mt-10 sm:gap-3 md:grid-cols-3 lg:grid-cols-4">
+              {visible.map((img, i) => (
+                <li key={img.src} className={`min-w-0 ${!showAll && i >= INITIAL_COUNT_MOBILE ? "max-md:hidden" : ""}`}>
+                  <button
+                    type="button"
+                    onClick={() => setIndex(i)}
+                    className="group relative block aspect-[4/3] w-full overflow-hidden rounded-xl border border-uitm-line bg-uitm-ivory transition-colors hover:border-uitm-gold focus:outline-none focus-visible:ring-4 focus-visible:ring-uitm-gold"
+                    aria-label={`Besarkan gambar: ${img.alt}`}
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      width={img.width}
+                      height={img.height}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    />
+                  </button>
+                </li>
+              ))}
+            </ul>
+
+            {hidden > 0 && (
+              <div className="mt-6 flex justify-center">
                 <button
                   type="button"
-                  onClick={() => setIndex(i)}
-                  className="group block w-full overflow-hidden rounded-xl border border-[#FDB913]/25 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#FDB913]/60 focus:outline-none focus-visible:ring-4 focus-visible:ring-uitm-gold"
-                  aria-label={`Besarkan gambar: ${img.alt}`}
+                  onClick={() => setShowAll((v) => !v)}
+                  aria-expanded={showAll}
+                  className="inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full border border-uitm-royal px-6 py-3 text-sm font-semibold text-uitm-royal transition hover:bg-uitm-royal hover:text-white min-[480px]:w-auto"
                 >
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    width={img.width}
-                    height={img.height}
-                    loading="lazy"
-                    decoding="async"
-                    className="block h-auto w-full transition duration-500 group-hover:scale-105"
-                  />
+                  {showAll ? (
+                    <>
+                      Tunjuk Kurang <ChevronUp className="h-4 w-4" aria-hidden="true" />
+                    </>
+                  ) : (
+                    <>
+                      Lihat Semua Gambar ({images.length}) <ChevronDown className="h-4 w-4" aria-hidden="true" />
+                    </>
+                  )}
                 </button>
-              </li>
-            ))}
-          </ul>
+              </div>
+            )}
+          </>
         )}
       </div>
 

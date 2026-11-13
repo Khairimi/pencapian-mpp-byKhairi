@@ -17,6 +17,8 @@ const config: Config = {
           royal2: "#260F42",
           royal3: "#160729",
           plum: "#2A0E4A",
+          ivory: "#FAF7F0",
+          line: "#E9E2F0",
         },
       },
       fontFamily: {

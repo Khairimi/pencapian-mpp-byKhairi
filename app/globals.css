@@ -8,21 +8,21 @@
  * padding sisi berganda dan tiada media query berulang dalam komponen.
  */
 :root {
-  color-scheme: dark;
+  color-scheme: light;
   --font-sans: "Plus Jakarta Sans Variable";
   --font-display: "Fraunces Variable";
   --nav-h: 4rem;
   --gutter: 1rem;
-  --section-py: 3.5rem;
+  --section-py: 3rem;
 }
 @media (min-width: 400px) {
   :root { --gutter: 1.25rem; }
 }
 @media (min-width: 640px) {
-  :root { --gutter: 1.5rem; --section-py: 4rem; }
+  :root { --gutter: 1.5rem; --section-py: 3.5rem; }
 }
 @media (min-width: 1024px) {
-  :root { --gutter: 2rem; --section-py: 5rem; }
+  :root { --gutter: 2rem; --section-py: 4.5rem; }
 }
 
 html {
@@ -31,7 +31,7 @@ html {
 }
 
 body {
-  @apply bg-uitm-royal text-white antialiased;
+  @apply bg-uitm-ivory text-uitm-ink antialiased;
 }
 
 img,
@@ -58,10 +58,15 @@ video {
   .container-mid { max-width: calc(64rem + 2 * var(--gutter)); }    /* ucapan, maklum balas, hubungi */
   .container-narrow { max-width: calc(56rem + 2 * var(--gutter)); } /* surat pemakluman (bacaan panjang) */
 
-  /* Kad rasmi seragam: lutsinar + sempadan emas halus */
+  /* Kad atas latar gelap: sempadan putih halus, tanpa garisan emas */
   .glass,
   .card-royal {
-    @apply border border-[#FDB913]/25 bg-white/[0.03] backdrop-blur-sm transition-all duration-300 hover:border-[#FDB913]/60;
+    @apply border border-white/10 bg-white/[0.05] transition-all duration-300 hover:border-white/20;
+  }
+
+  /* Kad atas latar terang */
+  .card-light {
+    @apply rounded-2xl border border-uitm-line bg-white shadow-[0_1px_2px_rgba(30,11,54,0.04)] transition-all duration-300;
   }
 }
 
@@ -75,16 +80,9 @@ section[id] {
 #utama {
   scroll-margin-top: 0;
 }
-
-/* Motif kerawang/songket halus untuk latar ungu */
-.motif {
-  background-image:
-    linear-gradient(45deg, rgba(253, 185, 19, 0.07) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(253, 185, 19, 0.07) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(253, 185, 19, 0.07) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(253, 185, 19, 0.07) 75%);
-  background-size: 28px 28px;
-  background-position: 0 0, 0 14px, 14px -14px, -14px 0;
+/* Anchor dalam section (bukan elemen section) */
+.anchor {
+  scroll-margin-top: calc(var(--nav-h) + 1.25rem);
 }
 
 .text-gold-gradient {
